@@ -1,0 +1,51 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/_variables.scss';
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/dist/bootstrap-vue.css';
+@import '~toastr/toastr.scss';
+
+/* General styles */
+html {
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+}
+body {
+  font-family: $font-family-base;
+  line-height: 1.8;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  color: #484848;
+  margin: 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden;
+  padding-bottom: 10rem;
+}
+
+.container {
+  margin-top: 1rem;
+}
+
+.bt-right {
+  float: right;
+  margin: 0.5rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: black !important;
+}
+
+.right {
+  float: right;
+}
+
+.breadcrumb {
+  padding: 0;
+  background-color: transparent;
+}
+.breadcrumb-item {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
