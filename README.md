@@ -1,6 +1,6 @@
-# platform-sms
+# site-wedding
 
-> QQ-Vivo Interface
+> Site Weedding - Camila & Albo
 
 ## Build Setup
 
@@ -23,10 +23,6 @@ npm run unit
 # run all tests
 npm test
 ```
-
-# Api Docs
-
-https://qq-vivo-api-gateway.herokuapp.com/doc/
 
 # Heroku Deploy
 
