@@ -3,6 +3,8 @@
 @import '~bootstrap/scss/bootstrap.scss';
 @import '~bootstrap-vue/dist/bootstrap-vue.css';
 @import '~toastr/toastr.scss';
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 /* General styles */
 html {
@@ -11,7 +13,7 @@ html {
   width: 100%;
 }
 body {
-  font-family: $font-family-base;
+  font-family: 'Open Sans', sans-serif;
   line-height: 1.8;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
@@ -22,6 +24,10 @@ body {
   width: 100%;
   overflow-x: hidden;
   padding-bottom: 10rem;
+}
+
+.cursiveFont {
+  font-family: 'Lobster', cursive;
 }
 
 .container {
