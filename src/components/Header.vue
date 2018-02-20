@@ -1,60 +1,85 @@
 <template>
- <div>
-  <b-navbar  toggleable="sm" type="dark" class="menu">
-
-  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-
-  <b-navbar-brand href="/"><img class="logo" src="/static/imgs/logo-vivo.png" /></b-navbar-brand>
-  <b-collapse is-nav id="nav_collapse">
-
-    <b-navbar-nav>
-      <b-nav-item href="/">Inicio</b-nav-item>
-      <b-nav-item href="/users">Usuarios</b-nav-item>
-    </b-navbar-nav>
-
-    <!-- Right aligned nav items -->
-    <b-navbar-nav class="ml-auto" >
-      <b-nav-item @click="logout">Logout</b-nav-item>
-    </b-navbar-nav>
-
-  </b-collapse>
-</b-navbar>
-</div>
-
+  <div>
+      <b-jumbotron class="cursiveFont bg text-center" header="Camila & Albo">
+        <template slot="lead">
+          <div>
+            <icon name="heart"></icon>
+          </div>
+          <strong >07.Setembro.2018</strong>
+        </template>
+      </b-jumbotron>
+      <b-row class="container-countdown">
+        <b-col class="countdown">
+          <strong>{{countdown.days}}</strong> <br>
+          <strong class="time-description">Dias</strong>
+        </b-col>
+        <b-col class="countdown">
+          <strong>{{countdown.hours}}:</strong> <br>
+          <strong class="time-description">Horas</strong>
+        </b-col>
+        <b-col class="countdown">
+          <strong>{{countdown.minutes}}:</strong> <br>
+          <strong class="time-description">Minutos</strong>
+        </b-col>
+        <b-col class="countdown">
+          <strong>{{countdown.seconds}}</strong> <br>
+          <strong class="time-description">Segundos</strong>
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-nav class="nav-menu" justified>
+          <b-nav-item active to="/">Nossa História</b-nav-item>
+          <b-nav-item to="/padrinhos">Padrinhos</b-nav-item>
+          <b-nav-item>Lista de Presentes</b-nav-item>
+          <b-nav-item>Confirme sua presença</b-nav-item>
+          <b-nav-item>Fotos</b-nav-item>
+        </b-nav>
+      </b-row>
+  </div>
 </template>
 
 <script>
-import storage from '@/services/storage';
-import swal from 'sweetalert';
-import toastr from 'toastr';
+import moment from 'moment';
 
 export default {
-  name: 'header',
+  name: 'Header',
   data() {
     return {
-      name: '',
-      lastname: ''
+      countdown: {}
     };
   },
   created() {
-    const user = storage.getUser();
-    this.name = user.name;
-    this.lastname = user.lastname;
+    this.timer();
   },
   methods: {
-    logout() {
-      swal({
-        title: 'Confirma logout?',
-        icon: 'warning',
-        buttons: true,
-        dangerMode: true
-      }).then(willDelete => {
-        if (willDelete) {
-          storage.clear();
-          toastr.success('Usuário deslogado');
-          this.$router.replace('/');
-        }
-      });
+    timer() {
+      const eventTime = moment('2018-09-07 16:30');
+      const currentTime = moment();
+      const diffDays = eventTime.diff(currentTime, 'days');
+      const diffTime = eventTime.diff(currentTime, 'milliseconds');
+
+      // const diffTime = eventTime - currentTime;
+      let duration = moment.duration(diffTime, 'milliseconds');
+      console.log(duration);
+      const interval = 1000;
+
+      const self = this;
+      setInterval(() => {
+        duration = moment.duration(duration - interval, 'milliseconds');
+        self.countdown = {
+          days: `${diffDays}`,
+          hours:
+            duration.hours() < 10 ? `0${duration.hours()}` : duration.hours(),
+          minutes:
+            duration.minutes() < 10
+              ? `0${duration.minutes()}`
+              : duration.minutes(),
+          seconds:
+            duration.seconds() < 10
+              ? `0${duration.seconds()}`
+              : duration.seconds()
+        };
+      }, interval);
     }
   }
 };
@@ -62,18 +87,39 @@ export default {
 
 <style lang="scss" scoped>
 @import '~assets/scss/index.scss';
-.menu {
-  background-color: #fff;
-  box-shadow: 1px 1px 1px #ccc;
+
+.jumbotron {
+  padding-top: 1rem;
+  margin-bottom: 0;
 }
-.nav-item,
-.nav-link,
-em {
-  color: black !important;
+.bg {
+  background: url('/static/imgs/banner.png') no-repeat;
+  background-position: center 10rem;
+  background-color: #cfd9e2;
+  height: 28rem;
+  background-size: 19rem;
 }
-.logo {
-  width: 50px;
-  height: 50px;
+
+.container-countdown {
+  background: #a2bfd8;
+  color: white;
+  text-align: center;
+  padding: 0 8rem;
+  text-shadow: 1px 1px 2px black;
+}
+.countdown {
+  line-height: 1.3;
+  padding: 1rem;
+  strong {
+    font-size: 2rem;
+  }
+  .time-description {
+    font-size: 1rem;
+  }
+}
+
+.nav-menu {
+  width: 100%;
 }
 </style>
 
