@@ -4,7 +4,7 @@
 
 ## Build Setup
 
-```bash
+````bash
 # install dependencies
 npm install
 
@@ -20,14 +20,10 @@ npm run build --report
 # run unit tests
 npm run unit
 
-# run all tests
-npm test
-```
-
 # Heroku Deploy
 
 Build and push to heroku
 
 ```bash
 yarn run deploy
-```
+````
