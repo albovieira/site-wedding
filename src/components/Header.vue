@@ -30,9 +30,10 @@
         <b-nav class="nav-menu" justified>
           <b-nav-item active to="/">Nossa História</b-nav-item>
           <b-nav-item to="/padrinhos">Padrinhos</b-nav-item>
-          <b-nav-item>Lista de Presentes</b-nav-item>
-          <b-nav-item>Confirme sua presença</b-nav-item>
-          <b-nav-item>Fotos</b-nav-item>
+          <b-nav-item to="/lista-de-presentes">Lista de Presentes</b-nav-item>
+          <b-nav-item to="/confirmar-presenca">Confirme sua presença</b-nav-item>
+          <b-nav-item to="/fotos">Fotos</b-nav-item>
+          <b-nav-item to="/como-chegar">Como chegar?</b-nav-item>
         </b-nav>
       </b-row>
   </div>
@@ -120,6 +121,7 @@ export default {
 
 .nav-menu {
   width: 100%;
+  padding: 1rem;
 }
 </style>
 

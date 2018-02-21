@@ -53,8 +53,9 @@ export default {
 <style lang="scss" scoped>
 @import '~assets/scss/index.scss';
 .card {
-  background-image: url('/static/imgs/polaroid.png');
+  background-color: #cfd9e2;
   background-repeat: no-repeat;
+  padding: 1rem;
 }
 </style>
 
