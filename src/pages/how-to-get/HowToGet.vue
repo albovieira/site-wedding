@@ -13,10 +13,18 @@
             :position="location"
             :center="location"
           ></gmap-marker>
+
+          <gmap-polyline
+              :path="path"
+              :editable="false"
+              ref="polygon">
+          </gmap-polyline>
+
           <gmap-marker
             :position="currentPosition"
             :center="location"
           ></gmap-marker>
+
         </gmap-map>
         </b-col>
         <b-col>
@@ -24,7 +32,7 @@
           <p><strong>Av. Otacílio Negrão de Lima, 4200 - Pampulha, Belo Horizonte - MG, 31365-450</strong></p>
           <div>
             <b-button @click="getLocation" :disabled="!currentPosition.length > 0">Usar minha localização</b-button>
-            <b-button>Calcular distância</b-button>
+            <b-button @click="getRoute">Traçar Rota</b-button>
           </div>
           <div>
             <div v-if="uberEstimations.length > 0" v-for="(item, index) in uberEstimations" :key="index">
@@ -41,8 +49,8 @@
 
 <script>
 import Header from '@/components/Header';
-import { buildQuery } from '@/services/util';
-import axios from 'axios';
+import getUberEstimation from '@/services/uber-estimation';
+import { drawRoute } from '@/services/address';
 
 export default {
   name: 'HowToGet',
@@ -51,6 +59,7 @@ export default {
   },
   data() {
     return {
+      path: {},
       location: {},
       currentPosition: {},
       uberEstimations: {}
@@ -64,19 +73,28 @@ export default {
     this.getLocation();
   },
   methods: {
-    getLocation() {
+    async getLocation() {
       if (navigator.geolocation) {
         const self = this;
-        navigator.geolocation.getCurrentPosition(position => {
+        navigator.geolocation.getCurrentPosition(async position => {
           self.currentPosition = {
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
-          self.getUberEstimation();
+
+          const start = self.currentPosition;
+          const end = self.location;
+          const estimation = await getUberEstimation(start, end);
+          self.uberEstimations = estimation;
         });
       }
     },
-    async getUberEstimation() {
+    async getRoute() {
+      console.log(this.currentPosition, this.location);
+      const route = await drawRoute(this.currentPosition, this.location);
+      console.log(route);
+    }
+    /* async getUberEstimation() {
       const query = buildQuery({
         start_latitude: this.currentPosition.lat,
         start_longitude: this.currentPosition.lng,
@@ -97,7 +115,7 @@ export default {
       console.log(this.uberEstimations);
       // https://api.uber.com/v1.2/estimates/price?start_latitude=37.7752315&start_longitude=-122.418075&end_latitude=37.7752415&end_longitude=-122.518075
       // EiSC1gcBMNpsmN4PC5GlEkQ6WjQuU0amxa7HLRC_
-    }
+    } */
   }
 };
 </script>
