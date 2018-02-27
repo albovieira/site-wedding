@@ -14,7 +14,7 @@
             :center="location"
           ></gmap-marker>
 
-          <gmap-polyline
+          <gmap-polyline v-if="this.path.length > 0"
               :path="path"
               :editable="false"
               ref="polygon">
@@ -92,7 +92,7 @@ export default {
     async getRoute() {
       console.log(this.currentPosition, this.location);
       const route = await drawRoute(this.currentPosition, this.location);
-      console.log(route);
+      this.path = route;
     }
     /* async getUberEstimation() {
       const query = buildQuery({

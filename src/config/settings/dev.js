@@ -5,7 +5,7 @@ export default {
     token: 'EiSC1gcBMNpsmN4PC5GlEkQ6WjQuU0amxa7HLRC_'
   },
   google: {
-    maps: 'https://maps.googleapis.com/maps/api',
+    maps: 'https://maps.googleapis.com/maps/api/',
     key: 'AIzaSyBtvGy-VKFY8WR4D6O5OmWY02InfLtFOuI'
   }
 };
