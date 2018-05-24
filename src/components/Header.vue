@@ -9,31 +9,32 @@
         </template>
       </b-jumbotron>
       <b-row class="container-countdown">
-        <b-col class="countdown">
+        <div class="countdown">
           <strong>{{countdown.days}}</strong> <br>
           <strong class="time-description">Dias</strong>
-        </b-col>
-        <b-col class="countdown">
+        </div>
+        <div class="countdown">
           <strong>{{countdown.hours}}:</strong> <br>
           <strong class="time-description">Horas</strong>
-        </b-col>
-        <b-col class="countdown">
+        </div>
+        <div class="countdown">
           <strong>{{countdown.minutes}}:</strong> <br>
           <strong class="time-description">Minutos</strong>
-        </b-col>
-        <b-col class="countdown">
+        </div>
+        <div class="countdown">
           <strong>{{countdown.seconds}}</strong> <br>
           <strong class="time-description">Segundos</strong>
-        </b-col>
+        </div>
       </b-row>
       <b-row>
-        <b-nav class="nav-menu" justified>
-          <b-nav-item active to="/">Nossa História</b-nav-item>
-          <b-nav-item to="/padrinhos">Padrinhos</b-nav-item>
-          <b-nav-item to="/lista-de-presentes">Lista de Presentes</b-nav-item>
-          <b-nav-item to="/confirmar-presenca">Confirme sua presença</b-nav-item>
-          <b-nav-item to="/fotos">Fotos</b-nav-item>
-          <b-nav-item to="/como-chegar">Como chegar?</b-nav-item>
+        <b-nav class="nav-menu"  center>
+          <b-nav-item active to="/"><!-- <icon name="home" color="#fff"></icon> --> Página Inicial</b-nav-item>
+          <b-nav-item  to="/mural"><!-- <icon name="comment" color="#fff"></icon> --> Mural de Mensagens</b-nav-item>
+          <b-nav-item to="/padrinhos"><!-- <icon name="users" color="#fff" /> --> Padrinhos</b-nav-item>
+          <b-nav-item to="/lista-de-presentes"><!-- <icon name="gift" color="#fff" /> --> Lista de Presentes</b-nav-item>
+          <b-nav-item to="/confirmar-presenca"><!-- <icon name="calendar" color="#fff" /> --> Confirme sua presença</b-nav-item>
+          <b-nav-item to="/fotos"><!-- <icon name="camera-retro" color="#fff" /> --> Fotos</b-nav-item>
+          <b-nav-item to="/como-chegar"><!-- <icon name="map" color="#fff" /> --> Como chegar?</b-nav-item>
         </b-nav>
       </b-row>
   </div>
@@ -94,28 +95,31 @@ export default {
   margin-bottom: 0;
 }
 .bg {
-  background: url('/static/imgs/banner.png') no-repeat;
-  background-position: center 10rem;
+  background: url(/static/imgs/couple.jpg) no-repeat;
+  /* background-position: center 10rem; */
   background-color: #cfd9e2;
   height: 28rem;
-  background-size: 19rem;
+  /* background-size: 19rem; */
+  background-size: cover;
 }
 
 .container-countdown {
-  background: #a2bfd8;
+  background: #d2d2d299;
   color: white;
   text-align: center;
   padding: 0 8rem;
   text-shadow: 1px 1px 2px black;
+  justify-content:center
 }
 .countdown {
-  line-height: 1.3;
+  line-height: 1;
   padding: 1rem;
   strong {
-    font-size: 2rem;
+    font-size: 4rem;
+    padding: 1rem;
   }
   .time-description {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -123,5 +127,6 @@ export default {
   width: 100%;
   padding: 1rem;
 }
+
 </style>
 

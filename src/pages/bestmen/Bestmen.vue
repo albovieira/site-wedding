@@ -1,38 +1,40 @@
 <template>
   <div>
     <Header></Header>
-    <b-row>
-      <b-col>
-        <b-card
-                img-src="/static/imgs/bestmen/alvaro.jpg"
-                img-alt="Álvaro Borges"
-                img-center>
-            <p class="card-text text-center">
-                Álvaro Borges
-            </p>
-        </b-card>
-      </b-col>
-      <b-col>
-        <b-card
-                img-src="/static/imgs/bestmen/victor.jpeg"
-                img-alt="Victor Elias"
-                img-center>
-            <p class="card-text text-center">
-                Victor Elias
-            </p>
-        </b-card>
-      </b-col>
-      <b-col>
-        <b-card
-                img-src="/static/imgs/bestmen/rafael.jpg"
-                img-alt="Rafael Armenio"
-                img-center>
-            <p class="card-text text-center">
-                Victor Elias
-            </p>
-        </b-card>
-      </b-col>
+    <b-container class="top">
+      <b-row>
+        <b-col>
+          <b-card
+                  img-src="/static/imgs/bestmen/alvaro.jpg"
+                  img-alt="Álvaro Borges"
+                  img-center>
+              <p class="card-text text-center">
+                  Álvaro Borges
+              </p>
+          </b-card>
+        </b-col>
+        <b-col>
+          <b-card
+                  img-src="/static/imgs/bestmen/victor.jpeg"
+                  img-alt="Victor Elias"
+                  img-center>
+              <p class="card-text text-center">
+                  Victor Elias
+              </p>
+          </b-card>
+        </b-col>
+        <b-col>
+          <b-card
+                  img-src="/static/imgs/bestmen/rafael.jpg"
+                  img-alt="Rafael Armenio"
+                  img-center>
+              <p class="card-text text-center">
+                  Victor Elias
+              </p>
+          </b-card>
+        </b-col>
     </b-row>
+    </b-container>
   </div>
 </template>
 

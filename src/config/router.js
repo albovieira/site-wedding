@@ -6,6 +6,8 @@ import GiftsList from '@/pages/gifts-list/GiftsList';
 import Confirmation from '@/pages/confirmation/Confirmation';
 import Gallery from '@/pages/gallery/Gallery';
 import HowToGet from '@/pages/how-to-get/HowToGet';
+import WallMessage from '@/pages/wall-message/WallMessage';
+
 import Error from '@/pages/error/Error';
 
 Vue.use(Router);
@@ -18,6 +20,12 @@ export default new Router({
       name: 'Home',
       component: Home,
       meta: { title: 'Inicio' }
+    },
+    {
+      path: '/mural',
+      name: 'WallMessage',
+      component: WallMessage,
+      meta: { title: 'Mural' }
     },
     {
       path: '/padrinhos',

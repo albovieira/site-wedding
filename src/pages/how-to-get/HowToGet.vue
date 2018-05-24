@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header></Header>
-    <b-container>
+    <b-container class="top">
       <b-row>
         <b-col>
         <gmap-map
