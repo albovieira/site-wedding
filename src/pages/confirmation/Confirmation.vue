@@ -39,16 +39,13 @@
         </b-input-group>
       </b-row>
 
-      <b-row style="margin-top:2%">
+      <b-row style="margin-top:2%" v-if="wishesList.length > 0">
         <b-col cols="12">
           <h4>As mais pedidas:</h4>
         </b-col>
         <b-col>
           <b-list-group>
-            <b-list-group-item>Vai malandra - Annita <!-- <icon name="play" color="#000"></icon> --></b-list-group-item>
-            <b-list-group-item>So quer vrau - Mc M</b-list-group-item>
-            <b-list-group-item>Be the One - Dua Lipa</b-list-group-item>
-            <b-list-group-item>IDGAF - Dua Lipa</b-list-group-item>
+            <b-list-group-item v-for="(music, index) in wishesList" :key="index">{{music.music}} - {{music.name}} <!-- <icon name="play" color="#000"></icon> --></b-list-group-item>
           </b-list-group>
         </b-col>
         <b-col class="warning">
@@ -79,13 +76,26 @@
             <h4>Peça sua música</h4>
           </b-col>
           <b-col cols="12">
-            <p>Dance ao som  de sua música favorita! Todos os pedidos serão repassados ao DJ</p>
-            <b-form-input v-model="artistMusic"
-                  type="text" style="margin-bottom:1rem"
-                  placeholder="Nome da Música"></b-form-input>
-            <b-form-input v-model="artistName"
-                  type="text" style="margin-bottom:1rem"
-                  placeholder="Nome do Artista"></b-form-input>
+              <p>Dance ao som  de sua música favorita! Todos os pedidos serão repassados ao DJ</p>
+              <div>
+                <label for="inputFormatter">Nome do Artista</label>
+                  <b-form-input v-model="artistName"
+                    type="text" style="margin-bottom:1rem"
+                    placeholder="Nome do Artista"></b-form-input>
+              </div>
+
+              <div>
+                <label for="inputFormatter">Nome da música</label>
+                  <b-form-input v-model="artistMusic"
+                      type="text" style="margin-bottom:1rem"
+                      placeholder="Nome da Música"></b-form-input>
+              </div>
+              <div>
+                <label for="inputFormatter">Link</label>
+                  <b-form-input v-model="linkMusic"
+                    type="text" style="margin-bottom:1rem"
+                    placeholder="Link"></b-form-input>
+              </div>
             </b-col>
         </b-row>
         <b-row v-if="email && confirmed">
@@ -102,12 +112,15 @@
         </b-container>
       </b-modal>
 
-      <b-modal id="modalUncheck" cancel-title="Cancelar" @ok="submit" ok-title="Desmarcar presença" centered hide-header ref="modalUncheck" size="lg" >
+      <b-modal id="modalUncheck" cancel-title="Cancelar" @ok="uncheck" ok-title="Desmarcar presença" centered hide-header ref="modalUncheck" size="lg" >
         <b-container>
           <b-row>
             <b-col cols="12">
               <h4>Desmarcar presença</h4>
               <p>Olá <strong>{{this.guest.name}}</strong>, após confirmar a desmarcação , alteum texto aqui...</p>
+               <b-form-input v-model="email"
+                  type="text"
+                  placeholder="Email"></b-form-input>
             </b-col>
           </b-row>
         </b-container>
@@ -149,11 +162,35 @@ export default {
       confirmed: false,
       status: false,
       artistName: '',
-      artistMusic: ''
+      artistMusic: '',
+      linkMusic: '',
+      wishesList: []
     };
   },
-  created() {},
+  async created() {
+    this.fetchMusics();
+  },
   methods: {
+    async uncheck(evt) {
+      try {
+        evt.preventDefault();
+        if (!this.email) {
+          swal('Preencha seu email', 'Digite seu email', 'error');
+        }
+
+        const payload = {
+          _id: this.guest._id,
+          confirmed: false
+        };
+
+        const res = await http.patch('guests', payload);
+        swal('Tudo certo!', 'Presença desmarcada, obrigado!', 'success');
+        this.$refs.modalUncheck.hide();
+        console.log(res);
+      } catch (error) {
+        console.log(error);
+      }
+    },
     async submit(evt) {
       try {
         evt.preventDefault();
@@ -170,16 +207,29 @@ export default {
           payload.music = {};
           payload.music.name = this.artistName;
           payload.music.music = this.artistMusic;
+          payload.music.link = this.linkMusic;
         }
 
         const res = await http.patch('guests', payload);
+        swal('Tudo certo!', 'Presença confirmada, obrigado!', 'success');
+        this.$refs.modalConfirmation.hide();
         console.log(res);
       } catch (error) {
         console.log(error);
       }
     },
+    async fetchMusics() {
+      this.wishesList = (await http.get('ranking')).data;
+    },
+    clean() {
+      this.email = '';
+      this.artistName = '';
+      this.artistMusic = '';
+      this.linkMusic = '';
+    },
     async searchUser() {
       try {
+        this.clean();
         this.isLoading = true;
         const res = await http.get(
           `${config.weddingAPI.url}guests?name=${this.name}`

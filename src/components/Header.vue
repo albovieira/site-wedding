@@ -28,7 +28,7 @@
       </b-row>
       <b-row>
         <b-nav class="nav-menu"  center>
-          <b-nav-item active to="/"><!-- <icon name="home" color="#fff"></icon> --> Página Inicial</b-nav-item>
+          <b-nav-item active to="/"><!-- <icon name="home" color="#fff"></icon> --> Nossa Historia</b-nav-item>
           <b-nav-item  to="/mural"><!-- <icon name="comment" color="#fff"></icon> --> Mural de Mensagens</b-nav-item>
           <b-nav-item to="/padrinhos"><!-- <icon name="users" color="#fff" /> --> Padrinhos</b-nav-item>
           <b-nav-item to="/lista-de-presentes"><!-- <icon name="gift" color="#fff" /> --> Lista de Presentes</b-nav-item>
@@ -104,12 +104,14 @@ export default {
 }
 
 .container-countdown {
-  background: #d2d2d299;
+  //background: #ffdbee;
+  margin-top: -7rem;
+  background: linear-gradient(#ffdbeecc, #ffdbee);
   color: white;
   text-align: center;
   padding: 0 8rem;
   text-shadow: 1px 1px 2px black;
-  justify-content:center
+  justify-content: center;
 }
 .countdown {
   line-height: 1;
@@ -127,6 +129,5 @@ export default {
   width: 100%;
   padding: 1rem;
 }
-
 </style>
 
