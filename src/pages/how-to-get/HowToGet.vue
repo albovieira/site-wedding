@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header></Header>
     <b-container class="top">
       <b-row>
         <b-col>
@@ -48,15 +47,12 @@
 </template>
 
 <script>
-import Header from '@/components/Header';
 import getUberEstimation from '@/services/uber-estimation';
 import { drawRoute } from '@/services/address';
 
 export default {
   name: 'HowToGet',
-  components: {
-    Header
-  },
+  components: {},
   data() {
     return {
       path: {},
@@ -126,5 +122,8 @@ export default {
   background-color: #cfd9e2;
   background-repeat: no-repeat;
   padding: 1rem;
+}
+.container {
+  padding-bottom: 8rem;
 }
 </style>

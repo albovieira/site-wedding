@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header></Header>
     <b-container class="top">
         <b-row>
           <b-col>
@@ -21,13 +20,9 @@
 </template>
 
 <script>
-import Header from '@/components/Header';
-
 export default {
   name: 'GifstList',
-  components: {
-    Header
-  },
+  components: {},
   data() {
     return {};
   }
@@ -36,15 +31,18 @@ export default {
 
 <style lang="scss" scoped>
 @import '~assets/scss/index.scss';
-.img{
-  width:200px
+.img {
+  width: 200px;
 }
-.item{
-  font-weight: bold
-}
-.price{
+.item {
   font-weight: bold;
-  font-size: 1.5rem
+}
+.price {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.container {
+  padding-bottom: 8rem;
 }
 </style>
 

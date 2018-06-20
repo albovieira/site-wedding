@@ -1,17 +1,12 @@
 <template>
   <div>
-    <Header></Header>
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header';
-
 export default {
   name: 'Gallery',
-  components: {
-    Header
-  },
+  components: {},
   data() {
     return {};
   }
@@ -20,5 +15,8 @@ export default {
 
 <style lang="scss" scoped>
 @import '~assets/scss/index.scss';
+.container {
+  padding-bottom: 8rem;
+}
 </style>
 

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header></Header>
     <b-container class="top">
       <b-row>
         <b-col cols="4">
@@ -42,13 +41,9 @@
 </template>
 
 <script>
-import Header from '@/components/Header';
-
 export default {
   name: 'Home',
-  components: {
-    Header
-  },
+  components: {},
   data() {
     return {};
   }
@@ -57,5 +52,9 @@ export default {
 
 <style lang="scss" scoped>
 @import '~assets/scss/index.scss';
+
+.container {
+  padding-bottom: 8rem;
+}
 </style>
 

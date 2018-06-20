@@ -1,7 +1,6 @@
 <template>
   <div>
     <loading :active.sync="isLoading"></loading>
-    <Header></Header>
     <b-container class="top">
       <b-row>
         <b-col cols="4">
@@ -26,7 +25,7 @@
                 <p class="text-danger" style="font-weight:bold">
                   * Utilize um email que você tenha acesso, pois,será por lá que você recebera todas as informações e avisos sobre o casamento.
                 </p>
-             </p>
+
             </b-card>
         </b-col>
       </b-row>
@@ -131,7 +130,6 @@
 </template>
 
 <script>
-import Header from '@/components/Header';
 import Autocomplete from 'vuejs-auto-complete';
 import Loading from 'vue-loading-overlay';
 
@@ -143,7 +141,6 @@ import { http } from '@/services/http';
 export default {
   name: 'Confirmation',
   components: {
-    Header,
     Autocomplete,
     Loading
   },
@@ -298,7 +295,7 @@ h4 {
 }
 .post-it-tip {
   background: #ecff93 !important;
-  ,
+
   p,
   h4 {
     color: #000 !important;
@@ -310,6 +307,9 @@ h4 {
 }
 .list-steps {
   padding: 1rem;
+}
+.container {
+  padding-bottom: 8rem;
 }
 </style>
 

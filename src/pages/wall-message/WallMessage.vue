@@ -1,14 +1,11 @@
 <template>
   <div>
-    <Header></Header>
-    <b-container class="top">
       <div class="wrapper text-center">
 
            <b-row>
             <b-col>
               <h2>Mural de Mensagens</h2>
-              <img class="heart" src="/static/imgs/heart.png" />
-              <b-button size="lg" v-b-modal.modalFillMessage variant="outline-primary">
+]              <b-button size="lg" v-b-modal.modalFillMessage variant="outline-primary">
                 Deixe sua Mensagen
               </b-button>
             </b-col>
@@ -27,7 +24,7 @@
             <h1><span>A</span><span>M</span><span>O</span><span>R</span></h1>
           </b-row> -->
     </div>
-    </b-container>
+
 
       <b-modal id="modalFillMessage" cancel-title="Cancelar" ok-title="Enviar" centered hide-header ref="modalFillMessage" size="lg" >
         <b-container>
@@ -56,16 +53,13 @@
 </template>
 
 <script>
-import Header from '@/components/Header';
 import { http } from '@/services/http';
 // import config from '@/config/settings';
 // import _ from 'lodash';
 
 export default {
   name: 'WallMessage',
-  components: {
-    Header
-  },
+  components: {},
   data() {
     return {
       messages: []
@@ -92,7 +86,9 @@ export default {
 .wrapper {
   min-height: 10rem;
   padding: 3rem;
-  background: linear-gradient(#0a0a0a, #474747);
+  background: url('/static/imgs/quadro_negro.jpg');
+  background-size: 100%;
+  //  background: linear-gradient(#0a0a0a, #474747);
   box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.3),
     inset 0 30px 30px rgba(255, 255, 255, 0.1);
   h2,
@@ -135,5 +131,7 @@ h1 {
     color: #f379ff;
   }
 }
+
+//
 </style>
 

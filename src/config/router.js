@@ -17,6 +17,7 @@ export default new Router({
   routes: [
     {
       path: '/',
+      alias: '/inicio',
       name: 'Home',
       component: Home,
       meta: { title: 'Inicio' }
