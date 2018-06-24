@@ -14,6 +14,13 @@
 @import url('https://fonts.googleapis.com/css?family=Imprima');
 /* General styles */
 
+@font-face {
+  font-family: 'Playlist';
+  font-style: normal;
+  font-weight: normal;
+  src: url('~assets/fonts/Playlist/Playlist_Script.otf') format('opentype');
+}
+
 html {
   min-height: 100%;
   width: 100%;
@@ -31,6 +38,7 @@ body {
   overflow-x: hidden;
   width: 100%;
   height: 100%;
+  padding-bottom: 8rem;
 }
 
 .nav {
@@ -61,11 +69,7 @@ body {
 }
 
 .cursiveFont {
-  font-family: 'Lobster', cursive;
-}
-
-.container {
-  margin-top: 1rem;
+  font-family: 'Playlist', cursive;
 }
 
 .bt-right {
@@ -87,7 +91,7 @@ button {
 
 .container {
   @include media-breakpoint-up(lg) {
-    width: 1400px;
+    width: 1600px;
     max-width: 100%;
   }
 }
@@ -104,4 +108,13 @@ button {
 }
 .slick-next {
   background: url('/static/imgs/angle-right.svg');
+}
+
+.custom-control-input:checked ~ .custom-control-indicator {
+  background-color: #6cc16c !important;
+}
+
+.custom-checkbox .custom-control-indicator {
+  height: 2rem;
+  width: 2rem;
 }

@@ -4,9 +4,13 @@
     <b-container class="top">
       <b-row>
         <b-col cols="4">
-            <b-card class="post-it post-it-presence" text-variant="white" title="Não se esqueça">
+            <b-card class="post-it post-it-presence" text-variant="white" title="Não se esqueça,">
               <p class="card-text">
-                Você tem até o dia <b>07 de Agosto</b> para confirmar sua presença.
+                Você tem até o dia <b>07 de Agosto</b> para confirmar sua presença!
+              </p>
+
+              <p class="card-text">
+                <strong>Esperamos voce lá =)</strong>
               </p>
             </b-card>
         </b-col>
@@ -14,33 +18,36 @@
             <b-card class="post-it post-it-second"  title="Confirmar sua presença é bem simples basta seguir o<br> passo a passo:">
               <p class="card-text">
                 <ul class="list-steps">
-                    <li>Busque seu nome com sobrenome no campo: "Buscar" , <b>ex: Camila Elias</b>.</li>
-                    <li>Em seguida, abrirá uma caixa de mensagem onde você deve marcar o campo que ficará verde.</li>
+                    <li>Busque seu nome com sobrenome no campo: "Buscar nome" , <b>ex: Camila Elias</b>.</li>
+                    <li>Vai abrir uma caixa de mensagem onde você deve marcar o campo com seu nome, que ficará verde.</li>
                     <li>
                       Logo em seguida é só colocar o seu email , <b>ex: camilaelas@gmail.com</b>, que voce sempre tenha acesso.
                     </li>
-                    <li>E ai, é só sugerir uma música que você gostaria de ouvir sendo tocada na festa! =)</li>
+                    <li>E ai, é só sugerir uma música que você gostaria de ouvir sendo tocada na festa! <strong>=)</strong></li>
                 </ul>
 
                 <p class="text-danger" style="font-weight:bold">
-                  * Utilize um email que você tenha acesso, pois,será por lá que você recebera todas as informações e avisos sobre o casamento.
+                  * Utilize um email que você sempre tenha acesso, pois, será por lá que você receberá todas as informações e avisos sobre o casamento.
                 </p>
 
             </b-card>
         </b-col>
       </b-row>
       <b-row style="margin-top:2%">
-        <b-input-group>
-          <b-form-input v-model="name" placeholder="Buscar" ></b-form-input>
+        <b-col>
+          <b-input-group>
+          <b-form-input v-model="name" placeholder="Buscar nome..." ></b-form-input>
           <b-input-group-append>
             <b-btn @click="searchUser" variant="outline-primary"><icon name="search" scale="2" ></icon></b-btn>
           </b-input-group-append>
         </b-input-group>
+
+        </b-col>
       </b-row>
 
-      <b-row style="margin-top:2%" v-if="wishesList.length > 0">
+      <b-row style="margin-top:6%" v-if="wishesList.length > 0">
         <b-col cols="12">
-          <h4>As mais pedidas:</h4>
+          <h4><icon scale="2" name="headphones" /> As músicas mais pedidas:</h4>
         </b-col>
         <b-col>
           <b-list-group>
@@ -59,18 +66,18 @@
           <b-col cols="12">
             <h4>Confirme sua presença</h4>
           </b-col>
-          <b-col cols="12">
+          <b-col cols="12" style="margin-top:2rem">
             <b-form-checkbox id="checkbox1"
               v-model="confirmed"
               >
-              {{guest.name}}
+              <p style="padding: 0.1rem 1rem 0;font-size: 1.2rem;">{{guest.name}}</p>
             </b-form-checkbox>
             <b-form-input v-model="email"
                   type="text"
                   placeholder="Email"></b-form-input>
           </b-col>
         </b-row>
-        <b-row style="margin-top:4rem" v-if="email && confirmed">
+        <b-row style="margin-top:4rem">
           <b-col cols="12">
             <h4>Peça sua música</h4>
           </b-col>
@@ -89,20 +96,19 @@
                       type="text" style="margin-bottom:1rem"
                       placeholder="Nome da Música"></b-form-input>
               </div>
-              <div>
-                <label for="inputFormatter">Link</label>
-                  <b-form-input v-model="linkMusic"
-                    type="text" style="margin-bottom:1rem"
-                    placeholder="Link"></b-form-input>
-              </div>
             </b-col>
         </b-row>
-        <b-row v-if="email && confirmed">
+        <b-row>
            <b-col>
             <b-card class="post-it post-it-tip" text-variant="white" title="Dica">
               <p class="card-text">
-               Caso ocorra algum imprevisto e você não possa comparecer depois de ter confirmado sua presença, é só cancelar sua confirmação.
-               Você poderá fazer isso até o dia 25 de agosto. Não esqueça, isso nos ajudará muito =)
+               Caso ocorra algum imprevisto e você não possa comparecer depois de ter confirmado sua presença, é só cancelar sua confirmação, no próprio site do casamento.
+              </p>
+              <p>
+                Você poderá fazer isso até o dia <strong>25 de Agosto</strong>.
+              </p>
+              <p>
+                <strong>Não esqueça, isso nos ajudará muito =)</strong>
               </p>
             </b-card>
            </b-col>
