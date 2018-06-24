@@ -1,6 +1,7 @@
 <template>
   <div>
     <b-container class="top">
+      <h1 class="main-title">Como chegar?</h1>
       <b-row>
         <b-col>
         <gmap-map

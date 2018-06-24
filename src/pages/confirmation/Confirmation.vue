@@ -2,6 +2,7 @@
   <div>
     <loading :active.sync="isLoading"></loading>
     <b-container class="top">
+      <h1 class="main-title">Confirmar presença</h1>
       <b-row>
         <b-col md="4" sm="12">
             <b-card class="post-it post-it-presence" text-variant="white" title="Não se esqueça,">

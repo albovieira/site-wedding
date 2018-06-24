@@ -175,3 +175,13 @@ button {
     }
   }
 }
+
+.main-title {
+  padding: 0 0 1rem 0;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 2rem;
+  @include media-breakpoint-down(xs) {
+    width: 100%;
+  }
+}

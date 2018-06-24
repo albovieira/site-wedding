@@ -4,6 +4,7 @@ import 'vue-awesome/icons';
 import Icon from 'vue-awesome/components/Icon';
 import Vuelidate from 'vuelidate';
 import * as VueGoogleMaps from 'vue2-google-maps';
+import VueSilentbox from 'vue-silentbox';
 
 export default {
   inject: () => {
@@ -18,6 +19,7 @@ export default {
         // (as you require)
       }
     });
+    Vue.use(VueSilentbox);
     Vue.component('icon', Icon);
     Vue.config.productionTip = false;
   }

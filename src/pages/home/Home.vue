@@ -1,6 +1,7 @@
 <template>
   <div>
     <b-container class="top">
+      <h1 class="main-title">Nossa História</h1>
       <b-row>
         <b-col lg="4" sm="12">
           <b-card

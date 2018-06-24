@@ -1,10 +1,9 @@
 <template>
   <div>
-      <div class="container text-center">
-
+      <div class="container">
+          <h1 class="main-title">Mural de Mensagens</h1>
            <b-row>
             <b-col>
-              <h2>Mural de Mensagens</h2>
              <b-button size="lg" v-b-modal.modalFillMessage variant="outline-primary">
                 Deixe sua Mensagem
               </b-button>
@@ -12,7 +11,7 @@
            </b-row>
 
 
-            <b-row>
+            <b-row class="text-center">
               <b-col class="line" md="4" sm="12" v-for="(m, key)  in messages" :key="m._id">
                  <b-card v-bind:class="{ 'post-it-three ': key % 2 !== 0,'post-it-two': key % 2 === 0 }" class="post-it " text-variant="white">
                     <p>{{m.message}}</p>
@@ -91,7 +90,6 @@ export default {
 .container {
   min-height: 10rem;
   padding: 3rem;
-  //  background: linear-gradient(#0a0a0a, #474747);
   h2,
   p,
   small {
@@ -110,14 +108,6 @@ export default {
     small {
       font-family: 'Indie Flower', cursive;
     }
-  }
-
-  .heart {
-    width: 8rem;
-    display: flex;
-  }
-  .reverse {
-    flex-direction: row-reverse;
   }
 }
 
