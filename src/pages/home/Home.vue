@@ -2,7 +2,7 @@
   <div>
     <b-container class="top">
       <b-row>
-        <b-col cols="4">
+        <b-col lg="4" sm="12">
           <b-card
                   img-src="/static/imgs/camila.jpeg"
                   img-alt="Camila Elias"
@@ -20,7 +20,7 @@
         <b-col>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non sagittis ipsum. Nunc imperdiet est vitae lectus commodo, eu finibus eros tempor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris accumsan nulla vel tellus posuere, eget aliquet lectus malesuada. Sed tincidunt dolor id dignissim consequat. Aenean et ligula quam. Donec arcu lacus, sodales a bibendum sit amet, commodo sed tellus. Praesent in interdum est. Cras sit amet auctor turpis, at sagittis justo. Phasellus ut commodo quam. Donec in dui vulputate, posuere odio at, faucibus metus. Suspendisse nec justo eleifend, porttitor orci eget, viverra lacus.</p>
         </b-col>
-        <b-col cols="4">
+        <b-col lg="4" sm="12">
           <b-card
                   img-src="/static/imgs/albo.jpeg"
                   img-alt="Albo Vieira"
@@ -58,14 +58,23 @@ export default {
   color: #000;
   font-weight: bold;
   font-size: 1.2rem;
+  @include media-breakpoint-down(md) {
+    font-size: 1rem !important;
+  }
 }
 .card-img {
   width: 100%;
   height: 20rem;
+  @include media-breakpoint-down(md) {
+    height: 10rem !important;
+  }
 }
 p {
   font-size: 1.3rem;
   text-align: justify;
+  @include media-breakpoint-down(md) {
+    font-size: 0.8rem !important;
+  }
 }
 </style>
 

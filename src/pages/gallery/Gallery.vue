@@ -15,8 +15,5 @@ export default {
 
 <style lang="scss" scoped>
 @import '~assets/scss/index.scss';
-.container {
-  padding-bottom: 8rem;
-}
 </style>
 

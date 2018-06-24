@@ -3,7 +3,7 @@
     <loading :active.sync="isLoading"></loading>
     <b-container class="top">
       <b-row>
-        <b-col cols="4">
+        <b-col md="8" sm="12">
             <b-card class="post-it post-it-presence" text-variant="white" title="Não se esqueça,">
               <p class="card-text">
                 Você tem até o dia <b>07 de Agosto</b> para confirmar sua presença!
@@ -14,7 +14,7 @@
               </p>
             </b-card>
         </b-col>
-        <b-col cols="8">
+        <b-col md="8" sm="12" class="post2">
             <b-card class="post-it post-it-second"  title="Confirmar sua presença é bem simples basta seguir o<br> passo a passo:">
               <p class="card-text">
                 <ul class="list-steps">
@@ -33,7 +33,7 @@
             </b-card>
         </b-col>
       </b-row>
-      <b-row style="margin-top:2%">
+      <b-row class="search">
         <b-col>
           <b-input-group>
           <b-form-input v-model="name" placeholder="Buscar nome..." ></b-form-input>
@@ -276,7 +276,16 @@ export default {
 
 <style lang="scss" scoped>
 @import '~assets/scss/index.scss';
+.post2 {
+  margin-top: 2rem;
+}
+.search {
+  margin-top: 2rem;
+}
 .warning {
+  @include media-breakpoint-down(md) {
+    margin-top: 2rem;
+  }
   display: inherit;
   p {
     padding-left: 1rem;
@@ -313,9 +322,6 @@ h4 {
 }
 .list-steps {
   padding: 1rem;
-}
-.container {
-  padding-bottom: 8rem;
 }
 </style>
 

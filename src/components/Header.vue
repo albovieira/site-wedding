@@ -15,13 +15,12 @@
 
                 background="#ababab"
                 :interval="6000"
-                img-width="1024"
+
     >
 
-      <!-- Text slides with image -->
-      <b-carousel-slide img-src="/static/imgs/banner/banner_1.jpeg" img-height="100">
-
+      <b-carousel-slide img-src="/static/imgs/banner/banner_1.jpeg">
       </b-carousel-slide>
+      <!-- Text slides with image
 
 
       <b-carousel-slide img-src="/static/imgs/banner/banner_2.jpeg">
@@ -43,7 +42,7 @@
       </b-carousel-slide>
 
       <b-carousel-slide img-src="/static/imgs/banner/banner_8.jpeg">
-      </b-carousel-slide>
+      </b-carousel-slide>-->
 
 
     </b-carousel>
@@ -55,8 +54,8 @@
           <strong >07.Setembro.2018</strong>
         </template>
       </b-jumbotron> -->
-      <b-row class="container-countdown" style="margin-left: 0;margin-right: 0;">
-        <div class="countdown" style="padding-right:4rem">
+     <div class="container-countdown">
+       <div class="countdown pd-right">
           <strong>{{countdown.days}}</strong> <br>
           <strong class="time-description">Dias</strong>
         </div>
@@ -79,16 +78,34 @@
           <strong>{{countdown.seconds}}</strong> <br>
           <strong class="time-description">Segundos</strong>
         </div>
-      </b-row>
-        <b-nav class="nav-menu"  center>
-          <b-nav-item active-class="active" to="/inicio"><!-- <icon name="home" color="#fff"></icon> --> Nossa Historia</b-nav-item>
-          <b-nav-item active-class="active"  to="/mural"><!-- <icon name="comment" color="#fff"></icon> --> Mural de Mensagens</b-nav-item>
-          <b-nav-item active-class="active" to="/padrinhos"><!-- <icon name="users" color="#fff" /> --> Padrinhos</b-nav-item>
-          <b-nav-item active-class="active" to="/lista-de-presentes"><!-- <icon name="gift" color="#fff" /> --> Lista de Presentes</b-nav-item>
-          <b-nav-item active-class="active" to="/confirmar-presenca"><!-- <icon name="calendar" color="#fff" /> --> Confirme sua presença</b-nav-item>
-          <b-nav-item active-class="active" to="/fotos"><!-- <icon name="camera-retro" color="#fff" /> --> Fotos</b-nav-item>
-          <b-nav-item active-class="active" to="/como-chegar"><!-- <icon name="map" color="#fff" /> --> Como chegar?</b-nav-item>
-        </b-nav>
+     </div>
+
+<!--     <b-nav class="nav-menu"  center>
+      <b-nav-item active-class="active" to="/inicio">Nossa Historia</b-nav-item>
+      <b-nav-item active-class="active"  to="/mural">Mural de Mensagens</b-nav-item>
+      <b-nav-item active-class="active" to="/padrinhos">Padrinhos</b-nav-item>
+      <b-nav-item active-class="active" to="/lista-de-presentes">Lista de Presentes</b-nav-item>
+      <b-nav-item active-class="active" to="/confirmar-presenca">Confirme sua presença</b-nav-item>
+      <b-nav-item active-class="active" to="/fotos">Fotos</b-nav-item>
+      <b-nav-item active-class="active" to="/como-chegar">Como chegar?</b-nav-item>
+    </b-nav>
+ -->
+    <b-navbar class="nav-menu" toggleable="md">
+
+      <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+      <b-collapse is-nav id="nav_collapse">
+        <b-navbar-nav>
+            <b-nav-item active-class="active" to="/inicio">Nossa Historia</b-nav-item>
+            <b-nav-item active-class="active"  to="/mural">Mural de Mensagens</b-nav-item>
+            <b-nav-item active-class="active" to="/padrinhos">Padrinhos</b-nav-item>
+            <b-nav-item active-class="active" to="/lista-de-presentes">Lista de Presentes</b-nav-item>
+            <b-nav-item active-class="active" to="/confirmar-presenca">Confirme sua presença</b-nav-item>
+            <b-nav-item active-class="active" to="/fotos">Fotos</b-nav-item>
+            <b-nav-item active-class="active" to="/como-chegar">Como chegar?</b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
+
   </div>
 </template>
 
@@ -155,10 +172,16 @@ export default {
   text-shadow: 2px 3px 3px black;
 
   h1 {
-    font-size: 5rem;
+    font-size: 6rem;
+    @include media-breakpoint-down(xs) {
+      font-size: 2rem;
+    }
   }
   strong {
     font-size: 3rem;
+    @include media-breakpoint-down(xs) {
+      font-size: 1rem;
+    }
   }
 }
 .bg {
@@ -172,23 +195,45 @@ export default {
 
 .container-countdown {
   //background: #ffdbee;
+  display: flex;
+  justify-content: center;
   margin-top: -14rem;
   background: linear-gradient(#ffdbeecc, #ffdbee);
   color: white;
   text-align: center;
   padding: 0 8rem;
   text-shadow: 1px 1px 2px black;
-  justify-content: center;
+  @include media-breakpoint-down(xs) {
+    margin-top: 0;
+    padding: 0.5rem 1rem;
+  }
+}
+
+.pd-right {
+  padding-right: 4rem;
+  @include media-breakpoint-down(xs) {
+    padding: 0.1rem;
+  }
 }
 .countdown {
   line-height: 1;
   padding: 1rem;
+  @include media-breakpoint-down(xs) {
+    padding: 0.2rem;
+  }
   strong {
     font-size: 4rem;
     padding: 1rem;
+    @include media-breakpoint-down(xs) {
+      font-size: 1.4rem;
+      padding: 0.4rem;
+    }
   }
   .time-description {
     font-size: 1.5rem;
+    @include media-breakpoint-down(xs) {
+      font-size: 0.5rem;
+    }
   }
 }
 

@@ -13,7 +13,7 @@
 
 
             <b-row>
-              <b-col class="line" cols="4" v-for="(m, key)  in messages" :key="m._id">
+              <b-col class="line" md="4" sm="12" v-for="(m, key)  in messages" :key="m._id">
                  <b-card v-bind:class="{ 'post-it-three ': key % 2 !== 0,'post-it-two': key % 2 === 0 }" class="post-it " text-variant="white">
                     <p>{{m.message}}</p>
                     <small>{{m.author}}</small>

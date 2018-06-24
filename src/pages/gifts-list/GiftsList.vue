@@ -41,8 +41,5 @@ export default {
   font-weight: bold;
   font-size: 1.5rem;
 }
-.container {
-  padding-bottom: 8rem;
-}
 </style>
 

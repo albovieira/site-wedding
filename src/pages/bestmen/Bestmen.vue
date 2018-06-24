@@ -1,9 +1,9 @@
 <template>
   <div>
-    <b-container class="top">
+    <b-container class="top" >
 
     <div>
-      <b-row class="block">
+      <b-row class="">
         <b-col cols="12">
           <h2 class="title pink">Madrinhas</h2>
         </b-col>
@@ -132,15 +132,14 @@
       </slick>
     </div>
 
-
     <div>
-      <b-row class="block">
+       <b-row class="block">
         <b-col cols="12">
           <h2 class="title yellow">Daminhas</h2>
         </b-col>
       </b-row>
-      <b-row>
-        <b-col>
+
+      <slick ref="slick" :options="slickOptions">
           <b-card
 
                 img-src="/static/imgs/bestmen/analuisa.jpeg"
@@ -150,9 +149,6 @@
                 Ana Luísa
             </p>
           </b-card>
-        </b-col>
-
-        <b-col>
           <b-card
 
                   img-src="/static/imgs/bestmen/thais.jpeg"
@@ -162,10 +158,7 @@
                   Thais
               </p>
           </b-card>
-
-        </b-col>
-      <b-col>
-        <b-card
+           <b-card
 
                   img-src="/static/imgs/bestmen/rafaela.jpeg"
                   img-alt="Rafaela"
@@ -175,9 +168,7 @@
               </p>
           </b-card>
 
-      </b-col>
-
-      </b-row>
+      </slick>
     </div>
 
     </b-container>
@@ -236,20 +227,28 @@ export default {
   color: #000;
   font-weight: bold;
   font-size: 1.2rem;
+  @include media-breakpoint-down(md) {
+    font-size: 1rem !important;
+    width: 15rem;
+  }
 }
 .card-img {
   width: 100%;
   border-radius: calc(0.25rem - 1px);
   height: 20rem;
+  @include media-breakpoint-down(md) {
+    height: 10rem !important;
+  }
 }
+
 .block {
-  margin-top: 4rem;
-}
-.container {
-  padding-bottom: 8rem;
+  margin-top: 2rem;
 }
 .title {
   padding: 1rem;
+  @include media-breakpoint-down(md) {
+    font-size: 1.2rem !important;
+  }
 }
 
 .pink {
