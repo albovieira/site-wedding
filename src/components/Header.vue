@@ -20,7 +20,7 @@
 
       <b-carousel-slide img-src="/static/imgs/banner/banner_1.jpeg">
       </b-carousel-slide>
-      <!-- Text slides with image
+      <!-- Text slides with image-->
 
 
       <b-carousel-slide img-src="/static/imgs/banner/banner_2.jpeg">
@@ -42,7 +42,7 @@
       </b-carousel-slide>
 
       <b-carousel-slide img-src="/static/imgs/banner/banner_8.jpeg">
-      </b-carousel-slide>-->
+      </b-carousel-slide>
 
 
     </b-carousel>

@@ -3,7 +3,7 @@
     <loading :active.sync="isLoading"></loading>
     <b-container class="top">
       <b-row>
-        <b-col md="8" sm="12">
+        <b-col md="4" sm="12">
             <b-card class="post-it post-it-presence" text-variant="white" title="Não se esqueça,">
               <p class="card-text">
                 Você tem até o dia <b>07 de Agosto</b> para confirmar sua presença!
@@ -70,14 +70,14 @@
             <b-form-checkbox id="checkbox1"
               v-model="confirmed"
               >
-              <p style="padding: 0.1rem 1rem 0;font-size: 1.2rem;">{{guest.name}}</p>
+              <p class="guest-name">{{guest.name}}</p>
             </b-form-checkbox>
             <b-form-input v-model="email"
                   type="text"
                   placeholder="Email"></b-form-input>
           </b-col>
         </b-row>
-        <b-row style="margin-top:4rem">
+        <b-row class="block">
           <b-col cols="12">
             <h4>Peça sua música</h4>
           </b-col>
@@ -276,8 +276,23 @@ export default {
 
 <style lang="scss" scoped>
 @import '~assets/scss/index.scss';
+.block {
+  margin-top: 4rem;
+  @include media-breakpoint-down(md) {
+    margin-top: 2rem;
+  }
+}
+.guest-name {
+  padding: 0.1rem 1rem 0;
+  font-size: 1.2rem;
+  @include media-breakpoint-down(md) {
+    font-size: 1rem;
+  }
+}
 .post2 {
-  margin-top: 2rem;
+  @include media-breakpoint-down(md) {
+    margin-top: 2rem;
+  }
 }
 .search {
   margin-top: 2rem;
