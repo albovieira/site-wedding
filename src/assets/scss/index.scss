@@ -135,11 +135,18 @@ button {
 .slick-slide {
   margin-right: 1rem !important;
 }
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 30px;
+  text-shadow: 1px 1px 10px black;
+}
 .slick-prev {
-  background: url('/static/imgs/angle-left.svg');
+  left: 2px;
+  z-index: 1000;
 }
 .slick-next {
-  background: url('/static/imgs/angle-right.svg');
+  right: 14px;
 }
 
 .custom-control-input:checked ~ .custom-control-indicator {

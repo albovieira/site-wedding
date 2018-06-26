@@ -1,9 +1,10 @@
 <template>
   <div>
+      <loading :active.sync="isLoading"></loading>
       <div class="container">
           <h1 class="main-title">Mural de Mensagens</h1>
            <b-row>
-            <b-col>
+            <b-col class="text-center">
              <b-button size="lg" v-b-modal.modalFillMessage variant="outline-primary">
                 Deixe sua Mensagem
               </b-button>
@@ -19,15 +20,10 @@
                 </b-card>
               </b-col>
             </b-row>
-
-
-          <!-- <b-row class="line reverse">
-            <h1><span>A</span><span>M</span><span>O</span><span>R</span></h1>
-          </b-row> -->
     </div>
 
 
-      <b-modal id="modalFillMessage" cancel-title="Cancelar" ok-title="Enviar" centered hide-header ref="modalFillMessage" size="lg" >
+      <b-modal id="modalFillMessage" cancel-title="Cancelar" @ok="saveMessage" ok-title="Enviar" centered hide-header ref="modalFillMessage" size="lg" >
         <b-container>
           <b-row>
             <b-col>
@@ -36,7 +32,7 @@
           </b-row>
           <b-row style="margin-top:4rem">
             <b-col>
-              <b-form-textarea id="textarea1"
+              <b-form-textarea id="comment"
                      v-model="message"
                      placeholder="Comentário..."
                      :rows="3"
@@ -55,15 +51,20 @@
 </template>
 
 <script>
+import Loading from 'vue-loading-overlay';
+import swal from 'sweetalert';
 import { http } from '@/services/http';
 // import config from '@/config/settings';
 // import _ from 'lodash';
 
 export default {
   name: 'WallMessage',
-  components: {},
+  components: {
+    Loading
+  },
   data() {
     return {
+      isLoading: false,
       author: '',
       message: '',
       messages: []
@@ -76,6 +77,22 @@ export default {
     async getMessages() {
       const res = await http.get('wall-messages');
       this.messages = res.data;
+    },
+    async saveMessage() {
+      try {
+        if (!this.author || !this.message) {
+          swal('Digite a mensagem e o seu nome', '', 'error');
+          return;
+        }
+        await http.post('wall-messages', {
+          author: this.author,
+          message: this.message
+        });
+        swal('Obrigado pela sua mensagem!', '', 'success');
+        await this.getMessages();
+      } catch (error) {
+        console.log(error);
+      }
     },
     showModal() {
       this.$refs.modalFillMessage.show();
