@@ -12,7 +12,8 @@
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit/specs",
     "deploy": "yarn build && git add . && git commit -m 'Adding files.' && git push heroku master",
-    "heroku-prebuild": "npm install --only=dev"
+    "heroku-prebuild": "npm install --only=dev",
+    "postinstall": "npm install mkdirp"
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -104,7 +105,7 @@
     "webpack-merge": "^4.1.0"
   },
   "engines": {
-    "node": ">= 8.0.0",
+    "node": ">= 8.9.1",
     "npm": ">= 5.0.0"
   },
   "browserslist": [
