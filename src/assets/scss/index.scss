@@ -192,3 +192,10 @@ button {
     width: 100%;
   }
 }
+
+textarea,
+select,
+input,
+button {
+  border-radius: 0 !important;
+}

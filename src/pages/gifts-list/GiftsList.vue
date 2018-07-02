@@ -4,7 +4,7 @@
         <h1 class="main-title">Lista de presentes</h1>
         <b-row>
           <b-col class="block" md="4" sm="12">
-            <b-card @click="showModal('modalHomeHelps')"
+            <b-card @click="showModal('modalKitchenHelps')"
                 img-src="/static/imgs/cooking.svg"
                 img-alt="Lulu"
                 img-center>
@@ -13,7 +13,7 @@
               </p>
               </b-card>
           </b-col>
-          <b-col class="block" md="4" sm="12">
+          <b-col class="block" md="4" sm="12" @click="showModal('modalHomeHelps')">
             <b-card
                 img-src="/static/imgs/pin.svg"
                 img-alt="Lulu"
@@ -24,7 +24,7 @@
               </b-card>
           </b-col>
 
-          <b-col class="block" md="4" sm="12">
+          <b-col class="block" md="4" sm="12"  @click="showModal('modalHoneymoon')">
             <b-card
                 img-src="/static/imgs/honeymoon.svg"
                 img-alt="Lulu"
@@ -38,22 +38,89 @@
         </b-row>
 
 
-        <b-modal id="modalHomeHelps" title="Ajudinha na Cozinha" cancel-title="Fechar" @ok="uncheck" centered  ref="modalHomeHelps" size="lg" >
+        <b-modal id="modalKitchenHelps" @hidden="onHidden" title="Ajudinha na Cozinha" cancel-title="Fechar"  centered  ref="modalKitchenHelps" size="lg" >
+          <b-container>
+            <b-row >
+              <b-col class="d-flex">
+                <b-input-group>
+                  <b-form-input v-model="filter.kitchen.productName" placeholder="Buscar..."></b-form-input>
+                  <b-input-group-append class="center-d">
+                    <b-btn @click="setFilter('productName','kitchen')" variant="outline-success">
+                      <icon name="search" scale="2" ></icon>
+                    </b-btn>
+                  </b-input-group-append>
+                </b-input-group>
+              </b-col>
+              <b-col class="d-flex">
+                <b-button-group>
+                  <b-button variant="outline-success" :pressed="filter.kitchen.low" @click="setFilter('low','kitchen')">Menor Valor</b-button>
+                  <b-button variant="outline-success" :pressed="filter.kitchen.high" @click="setFilter('high','kitchen')">Maior Valor</b-button>
+                  <!-- <b-button variant="outline-success">Mais relevante</b-button> -->
+                </b-button-group>
+              </b-col>
+            </b-row>
+            <b-row class="top">
+              <b-col class="container-product" md="4" sm="12" v-for="(item, key) in kitchenItems" :key="key">
+                 <pay-pal-button :certificate="item.certificate" :price="`R$ ${item.price}`" :name="item.name" :img="item.img" />
+              </b-col>
+            </b-row>
+            </b-container>
+        </b-modal>
+
+        <b-modal id="modalHomeHelps" @hidden="onHidden" title="Ajudinha na Casa" cancel-title="Fechar"  centered  ref="modalHomeHelps" size="lg" >
           <b-container>
             <b-row>
-              <b-col cols="12">
-                  <img class="img" src="/static/imgs/jogo_jantar.jpg" />
-                  <p class="item">Jogo de jantar</p>
-                  <p class="price">R$ 200,00</p>
-                  <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
-                    <input type="hidden" name="cmd" value="_s-xclick">
-                    <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-                    ">
-                    <input type="image" src="https://www.paypalobjects.com/pt_BR/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!">
-                    <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
-                  </form>
-                </b-col>
-              </b-row>
+              <b-col class="d-flex">
+                <b-input-group>
+                  <b-form-input v-model="filter.home.productName" placeholder="Buscar..."></b-form-input>
+                  <b-input-group-append class="center-d">
+                    <b-btn @click="setFilter('productName','home')" variant="outline-success">
+                      <icon name="search" scale="2" ></icon>
+                    </b-btn>
+                  </b-input-group-append>
+                </b-input-group>
+              </b-col>
+              <b-col class="d-flex">
+                <b-button-group>
+                  <b-button variant="outline-success" :pressed="filter.home.low" @click="setFilter('low','home')">Menor Valor</b-button>
+                  <b-button variant="outline-success" :pressed="filter.home.high" @click="setFilter('high','home')">Maior Valor</b-button>
+                  <!-- <b-button variant="outline-success">Mais relevante</b-button> -->
+                </b-button-group>
+              </b-col>
+            </b-row>
+            <b-row class="top">
+              <b-col class="container-product" md="4" sm="12" v-for="(item, key) in homeItems" :key="key">
+                 <pay-pal-button :certificate="item.certificate" :price="`R$ ${item.price}`" :name="item.name" :img="item.img" />
+              </b-col>
+            </b-row>
+            </b-container>
+        </b-modal>
+
+        <b-modal id="modalHoneymoon" @hidden="onHidden" title="Ajudinha na Lua de Mel" cancel-title="Fechar"  centered  ref="modalHoneymoon" size="lg" >
+          <b-container>
+            <b-row >
+              <b-col class="d-flex">
+                <b-input-group>
+                  <b-form-input v-model="filter.honeymoon.productName" placeholder="Buscar..."></b-form-input>
+                  <b-input-group-append class="center-d">
+                    <b-btn @click="setFilter('productName','honeymoon')" variant="outline-success">
+                      <icon name="search" scale="2" ></icon>
+                    </b-btn>
+                  </b-input-group-append>
+                </b-input-group>
+              </b-col>
+              <b-col class="d-flex">
+                <b-button-group>
+                  <b-button variant="outline-success" :pressed="filter.honeymoon.low" @click="setFilter('low','honeymoon')">Menor Valor</b-button>
+                  <b-button variant="outline-success" :pressed="filter.honeymoon.high" @click="setFilter('high','honeymoon')">Maior Valor</b-button>
+                </b-button-group>
+              </b-col>
+            </b-row>
+            <b-row class="top">
+              <b-col class="container-product" md="4" sm="12" v-for="(item, key) in honeymoonItems" :key="key">
+                 <pay-pal-button :certificate="item.certificate" :price="`R$ ${item.price}`" :name="item.name" :img="item.img" />
+              </b-col>
+            </b-row>
             </b-container>
         </b-modal>
 
@@ -62,15 +129,112 @@
 </template>
 
 <script>
+import _ from 'lodash';
+import PayPalButton from './PayPalButton';
+import { getKitchen, getHome, getHoneymoon } from '../../services/gifts';
+
 export default {
   name: 'GifstList',
-  components: {},
-  data() {
-    return {};
+  components: {
+    PayPalButton
   },
+  data() {
+    return {
+      filter: {
+        kitchen: {
+          productName: '',
+          low: false,
+          high: false
+        },
+        home: {
+          productName: '',
+          low: false,
+          high: false
+        },
+        honeymoon: {
+          productName: '',
+          low: false,
+          high: false
+        }
+      },
+      kitchenItems: [],
+      homeItems: [],
+      honeymoonItems: []
+    };
+  },
+  created() {
+    this.kitchenItems = getKitchen();
+    this.homeItems = getHome();
+    this.honeymoonItems = getHoneymoon();
+  },
+
   methods: {
+    setFilter(data, field) {
+      if (data === 'low') {
+        this.filter[field].low = true;
+        this.filter[field].high = false;
+      } else if (data === 'high') {
+        this.filter[field].high = true;
+        this.filter[field].low = false;
+      }
+
+      const objRef = {
+        kitchen: this.kitchenItems,
+        home: this.homeItems
+      };
+
+      this.applyFilters(field, objRef[field]);
+    },
+
+    applyFilters(field, list) {
+      let newList = list;
+
+      const self = this;
+      if (field === 'kitchen') {
+        newList = getKitchen();
+      } else if (field === 'home') {
+        newList = getHome();
+      } else if (field === 'honeymoon') {
+        newList = getHoneymoon();
+      }
+
+      newList = _.filter(newList, i => {
+        return i.name.match(
+          new RegExp(`.*${self.filter[field].productName}.*`, 'i')
+        );
+      });
+
+      if (this.filter[field].low) {
+        newList = _.orderBy(newList, ['price'], ['asc']);
+      } else if (this.filter[field].high) {
+        newList = _.orderBy(newList, ['price'], ['desc']);
+      }
+
+      if (field === 'kitchen') {
+        this.kitchenItems = newList;
+      } else if (field === 'home') {
+        this.homeItems = newList;
+      } else if (field === 'honeymoon') {
+        this.homeItems = newList;
+      }
+    },
+
     showModal(modal) {
       this.$refs[modal].show();
+    },
+    onHidden() {
+      this.filter.kitchen.productName = '';
+      this.filter.kitchen.high = false;
+      this.filter.kitchen.low = false;
+
+      this.kitchenItems = getKitchen();
+
+      this.filter.home.productName = '';
+      this.filter.home.high = false;
+      this.filter.home.low = false;
+      this.homeItems = getHome();
+
+      // this.filter.honeymoon.productName = '';
     }
   }
 };
@@ -78,9 +242,20 @@ export default {
 
 <style lang="scss" scoped>
 @import '~assets/scss/index.scss';
-.img {
-  width: 200px;
+.top {
+  margin-top: 2rem;
 }
+.d-flex {
+  display: flex;
+  align-self: center;
+}
+.center-d {
+  align-self: center;
+}
+.container-product {
+  padding: 1rem;
+}
+
 .item {
   font-weight: bold;
 }

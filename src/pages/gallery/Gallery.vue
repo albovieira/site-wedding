@@ -5,7 +5,7 @@
       <div class="container-gallery">
           <silentbox-group>
             <silentbox-item v-for="n in 37" :key="n"  :src="`/static/imgs/gallery/${n}.jpeg`">
-                <img :src="`/static/imgs/gallery/${n}.jpeg`" height="200px" width="200px">
+                <img :src="`/static/imgs/gallery/${n}.jpeg`">
             </silentbox-item>
           </silentbox-group>
       </div>
@@ -26,15 +26,17 @@ export default {
 <style lang="scss" scoped>
 @import '~assets/scss/index.scss';
 .container-gallery {
-  box-shadow: 1px 0px 8px #ccc;
+  // box-shadow: 1px 0px 8px #ccc;
+  // padding: 2rem;
 }
 #silentbox-group {
   text-align: center;
 
   img {
-    padding: 0 1rem 0 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin: 2rem;
+    padding: 2px;
+    width: 20rem;
+    height: 20rem;
   }
 }
 </style>
