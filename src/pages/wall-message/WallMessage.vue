@@ -30,19 +30,19 @@
               <p>Deixe sua mensagem para nós!</p>
             </b-col>
           </b-row>
-          <b-row style="margin-top:4rem">
+          <b-row style="margin-top:1rem">
             <b-col>
               <b-form-textarea id="comment"
                      v-model="message"
-                     placeholder="Comentário..."
-                     :rows="3"
+                     placeholder="Mensagem..."
+                     :rows="8"
                      :max-rows="6">
               </b-form-textarea>
             </b-col>
             <b-col cols="12" style="margin-top:1rem">
                 <b-form-input v-model="author"
                     type="text" style="margin-bottom:1rem"
-                    placeholder="Nome"></b-form-input>
+                    placeholder="Seu nome"></b-form-input>
             </b-col>
             </b-row>
         </b-container>
