@@ -20,11 +20,11 @@
               <p class="card-text">
                 <ul class="list-steps">
                     <li>Busque seu nome com sobrenome no campo: "Buscar nome" , <b>ex: Camila Elias</b>.</li>
-                    <li>Abrirá uma caixa de mensagem onde você deve marcar o campo com seu nome, que ficará verde.</li>
+                    <li>Abrirá uma caixa de mensagem onde você deverá marcar o campo com seu nome, que ficará verde.</li>
                     <li>
-                      Logo em seguida é só colocar o seu email , <b>ex: camilaelas@gmail.com</b>, que voce sempre tenha acesso.
+                      Logo em seguida, coloque seu email que voce sempre acesse <b>ex: camilaelas@gmail.com</b>.
                     </li>
-                    <li>E ai, é só sugerir uma música que você gostaria de ouvir sendo tocada na festa! <strong>=)</strong></li>
+                    <li>E ai, é só sugerir uma música que você queira ouvir sendo tocada na festa! <strong>=)</strong></li>
                 </ul>
 
                 <p class="text-danger" style="font-weight:bold">
@@ -103,13 +103,13 @@
            <b-col>
             <b-card class="post-it post-it-tip" text-variant="white" title="Dica">
               <p class="card-text">
-               Caso ocorra algum imprevisto e você não possa comparecer depois de ter confirmado sua presença, é só cancelar sua confirmação, no próprio site do casamento.
+                Caso ocorra algum imprevisto que impeça você de ir ao casamento após a confirmação da sua presença, gentileza cancelar seu comparecimento no próprio site do casamento.
               </p>
               <p>
-                Você poderá fazer isso até o dia <strong>25 de Agosto</strong>.
+                Você deverá fazer isso até o dia <strong>25 de agosto de 2018</strong>.
               </p>
               <p>
-                <strong>Não esqueça, isso nos ajudará muito =)</strong>
+                <strong>Não se esqueça, pois isso nos ajudará muito =)</strong>
               </p>
             </b-card>
            </b-col>

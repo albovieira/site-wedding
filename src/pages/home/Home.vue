@@ -18,25 +18,37 @@
         </b-col>
         <b-col>
             <p>
-              Se conheceram em junho de 2010 e depois de tanta confusão e brigas, finalmente começaram a se entender em outubro de 2011, graças a série the walking dead, tempos depois foram
-              se encontrar no festival de quadrinhos de Belo Horizonte, onde perceberam algo de interessante um no outro. Albo não perdeu tempo,
-              tratou logo de deixar bem claro seus interesses e intenções e em dezembro de 2011 fez o tão esperado pedido de namoro (depois de MUITA enrolação).
+              Nos conhecemos em junho de 2010 e depois de tantas confusões e brigas finalmente começamos a nos entender em outubro de 2011, graças a série “The Walking Dead”.
             </p>
             <p>
-              Daí em diante não demorou muito pra crescer o desejo de se casarem e ficarem juntinhos, se organizaram, fizeram planos, juntaram grana e decidiram a data.
-  Isso tudo levou mais de 3 anos, mas o tal grande pedido não tinha sido feito ainda, e a Camila já não aguentava mais esperar, então com a ajudinha de alguns cupidos, o Albo finalmente
-  o fez em 07 de janeiro de 2017.
+              Depois de muito tempo, nos encontramos no Festival de Quadrinhos de Belo Horizonte/MG, onde percebemos algo de interessante um no outro.
             </p>
-            <p>Mais de um ano depois, o tão esperado e sonhado grande dia está cada vez mais próximo e esses dois corações se enchem de alegria, euforia e ansiedade a cada segundo que passa da contagem regressiva!</p>
-          </b-col>
+            <p>Albo não perdeu tempo, tratou logo de deixar bem claro seus interesses e intenções para mim e em dezembro de 2011 ele fez o tão esperado pedido de namoro (Depois de MUITA enrolação).</p>
+            <p>
+              Daí em diante não demorou muito para crescer o desejo de nos casarmos e ficarmos juntinhos. Nos organizamos, fizemos planos, juntamos grana e decidimos a data do casamento, tudo isso demorou mais de três anos para acontecer (Foi sofrido! KKKK)
+            </p>
+            <p>
+              Contudo, o pedido de casamento não havia sido feito ainda. Eu já não aguentava mais esperar, então, com a ajudinha de alguns cupidos Albo finalmente o fez em 07 de janeiro de 2017 (Agradecimento especial aos cupidinhos =)
+            </p>
+            <p>
+              Mais de um ano depois, o tão esperado e sonhado grande dia está cada vez mais próximo e esses dois corações se enchem de alegria, euforia e ansiedade a cada segundo que passa da contagem regressiva! (Misericórdia! Passa logo! KKKK)
+            </p>
+
+
+        </b-col>
       </b-row>
       <b-row style="margin-top:2rem">
         <b-col>
-          <p>
-            Esperamos que todos vocês se sintam super importantes e parte dessa linda história, pois cada um foi escolhido a dedo por fazerem a diferença em nossas vidas.
-Criamos esse site para reunir de forma simples e fácil tudo que vocês precisam saber sobre nosso grande dia, desejamos que esse experiência seja tão empolgante e emocionante pra vocês quanto está sendo pra gente
-<br><strong>Obrigada por serem uma parte de um todo!</strong>
-          </p>
+            <p>
+              Esperamos que vocês se sintam importantes e parte dessa linda história, pois, cada um foi escolhido a dedo por fazer a diferença em nossas vidas.
+            </p>
+            <p>
+              Criamos esse site para reunir de forma simples e fácil tudo que vocês precisam saber sobre nosso grande dia, desejamos que essa experiência seja tão empolgante e emocionante para vocês quanto está sendo para nós.
+            </p>
+            <p>
+              <strong>Agradecemos por serem uma parte de um todo!</strong>
+            </p>
+
           <div class="quote-container">
             <blockquote><p>E, acima de tudo, tenham amor. Pois o amor une perfeitamente todas as coisas.</p></blockquote>
             <small><strong>Colossences 3.14</strong></small>
@@ -50,7 +62,7 @@ Criamos esse site para reunir de forma simples e fácil tudo que vocês precisam
               <div class="card-text text-left">
                   <p class="text-center"><strong>Albo Vieira</strong></p>
                   <small>
-                    Albo com B, capixaba, 28 anos, capricorniano, programador, mundo da lua, engraçado, fã de Star Wars, cinema  e cultura pop.
+                    Albo com B, capixaba, 28 anos, capricorniano, programador, mundo da lua, engraçado, fã de Star Wars, Walking Dead , cinema  e cultura pop.
                   </small>
               </div>
           </b-card>
