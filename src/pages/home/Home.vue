@@ -89,7 +89,7 @@ export default {
 }
 .card-img {
   width: 100%;
-  height: 20rem;
+  height: 15rem;
   @include media-breakpoint-down(md) {
     height: 10rem !important;
   }
@@ -124,6 +124,10 @@ blockquote:before {
 blockquote p {
   display: inline;
   font-size: 1.4rem;
+}
+
+small {
+  font-size: 0.8rem;
 }
 </style>
 
