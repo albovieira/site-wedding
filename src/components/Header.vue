@@ -11,17 +11,12 @@
 
     <b-carousel id="carousel1"
                 style="text-shadow: 1px 1px 2px #333;z-index:-1"
-                controls
 
                 background="#ababab"
-                :interval="6000"
-
-    >
+                :interval="6000">
 
       <b-carousel-slide img-src="/static/imgs/banner/banner_1.jpeg">
       </b-carousel-slide>
-      <!-- Text slides with image-->
-
 
       <b-carousel-slide img-src="/static/imgs/banner/banner_2.jpeg">
       </b-carousel-slide>
@@ -116,7 +111,8 @@ export default {
   name: 'Header',
   data() {
     return {
-      countdown: {}
+      countdown: {},
+      slide: null
     };
   },
   created() {

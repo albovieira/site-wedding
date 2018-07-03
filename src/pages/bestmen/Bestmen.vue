@@ -43,7 +43,7 @@
                   img-alt="Dina"
                   img-center>
               <p class="card-text text-center">
-                  Dina
+                  Diná
               </p>
           </b-card>
           <b-card
@@ -81,7 +81,7 @@
                   img-alt="Álvaro Borges"
                   img-center>
               <p class="card-text text-center">
-                  Álvaro
+                  Alvaro
               </p>
           </b-card>
           <b-card

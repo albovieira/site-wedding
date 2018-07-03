@@ -11,7 +11,7 @@
               </p>
 
               <p class="card-text">
-                <strong>Esperamos voce lá =)</strong>
+                <strong>Esperamos você lá =)</strong>
               </p>
             </b-card>
         </b-col>
@@ -20,7 +20,7 @@
               <p class="card-text">
                 <ul class="list-steps">
                     <li>Busque seu nome com sobrenome no campo: "Buscar nome" , <b>ex: Camila Elias</b>.</li>
-                    <li>Vai abrir uma caixa de mensagem onde você deve marcar o campo com seu nome, que ficará verde.</li>
+                    <li>Abrirá uma caixa de mensagem onde você deve marcar o campo com seu nome, que ficará verde.</li>
                     <li>
                       Logo em seguida é só colocar o seu email , <b>ex: camilaelas@gmail.com</b>, que voce sempre tenha acesso.
                     </li>
@@ -56,7 +56,7 @@
           </b-list-group>
         </b-col>
         <b-col class="warning">
-          <iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=playlist&id=30595446&app_id=1" width="700" height="350"></iframe>
+          <iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=playlist&id=4421478286&app_id=1" width="700" height="350"></iframe>
         </b-col>
       </b-row>
 

@@ -6,7 +6,6 @@
           <b-col class="block" md="4" sm="12">
             <b-card @click="showModal('modalKitchenHelps')"
                 img-src="/static/imgs/cooking.svg"
-                img-alt="Lulu"
                 img-center>
               <p class="card-text text-center">
                 Ajudinha na Cozinha
@@ -16,7 +15,6 @@
           <b-col class="block" md="4" sm="12" @click="showModal('modalHomeHelps')">
             <b-card
                 img-src="/static/imgs/pin.svg"
-                img-alt="Lulu"
                 img-center>
               <p class="card-text text-center">
                 Ajudinha na casa
@@ -27,7 +25,6 @@
           <b-col class="block" md="4" sm="12"  @click="showModal('modalHoneymoon')">
             <b-card
                 img-src="/static/imgs/honeymoon.svg"
-                img-alt="Lulu"
                 img-center>
               <p class="card-text text-center">
                 Ajudinha na lua-de-mel

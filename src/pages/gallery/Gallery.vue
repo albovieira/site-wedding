@@ -4,7 +4,7 @@
       <h1 class="main-title">Fotos</h1>
       <div class="container-gallery">
           <silentbox-group>
-            <silentbox-item v-for="n in 37" :key="n"  :src="`/static/imgs/gallery/${n}.jpeg`">
+            <silentbox-item v-for="n in 36" :key="n"  :src="`/static/imgs/gallery/${n}.jpeg`">
                 <img :src="`/static/imgs/gallery/${n}.jpeg`">
             </silentbox-item>
           </silentbox-group>
@@ -33,7 +33,7 @@ export default {
   text-align: center;
 
   img {
-    margin: 2rem;
+    margin: 0 2rem 0 0;
     padding: 2px;
     width: 20rem;
     height: 20rem;
