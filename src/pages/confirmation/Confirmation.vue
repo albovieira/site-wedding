@@ -19,7 +19,7 @@
             <b-card class="post-it post-it-second"  title="Confirmar sua presença é bem simples basta seguir o<br> passo a passo:">
               <p class="card-text">
                 <ul class="list-steps">
-                    <li>Busque seu nome com sobrenome no campo: "Buscar nome"  <b>(ex: Camila Elias)</b>.</li>
+                    <li>Busque seu nome com sobrenome no campo: "Buscar nome". <b>(ex: Camila Elias)</b>.</li>
                     <li>Abrirá uma caixa de mensagem onde você deverá marcar o campo com seu nome, que ficará verde.</li>
                     <li>
                       Logo em seguida, coloque seu email que voce sempre acesse. <br><b>(ex: camilaelas@gmail.com)</b>.
@@ -285,9 +285,9 @@ export default {
 }
 .guest-name {
   padding: 0.1rem 1rem 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   @include media-breakpoint-down(md) {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
 .post2 {
