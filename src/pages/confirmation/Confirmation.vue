@@ -200,6 +200,7 @@ export default {
         evt.preventDefault();
         if (!this.confirmed || !this.email) {
           swal('Preencha seu email', 'Digite seu email', 'error');
+          return;
         }
 
         const payload = {

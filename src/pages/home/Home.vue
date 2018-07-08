@@ -25,13 +25,13 @@
             </p>
             <p>Albo não perdeu tempo, tratou logo de deixar bem claro seus interesses e intenções para mim e em dezembro de 2011 ele fez o tão esperado pedido de namoro (Depois de MUITA enrolação).</p>
             <p>
-              Daí em diante não demorou muito para crescer o desejo de nos casarmos e ficarmos juntinhos. Nos organizamos, fizemos planos, juntamos grana e decidimos a data do casamento, tudo isso demorou mais de três anos para acontecer (Foi sofrido! KKKK)
+              Daí em diante não demorou muito para crescer o desejo de nos casarmos e ficarmos juntinhos. Nos organizamos, fizemos planos, juntamos grana e decidimos a data do casamento, tudo isso demorou mais de três anos para acontecer (Foi sofrido! hahaha)
             </p>
             <p>
-              Contudo, o pedido de casamento não havia sido feito ainda. Eu já não aguentava mais esperar, então, com a ajudinha de alguns cupidos Albo finalmente o fez em 07 de janeiro de 2017 (Agradecimento especial aos cupidinhos =)
+              Contudo, o pedido de casamento não havia sido feito ainda. Eu já não aguentava mais esperar, então, com a ajudinha de alguns cupidos Albo finalmente o fez em 07 de janeiro de 2017 (Agradecimento especial aos cupidinhos =) )
             </p>
             <p>
-              Mais de um ano depois, o tão esperado e sonhado grande dia está cada vez mais próximo e esses dois corações se enchem de alegria, euforia e ansiedade a cada segundo que passa da contagem regressiva! (Misericórdia! Passa logo! KKKK)
+              Mais de um ano depois, o tão esperado e sonhado grande dia está cada vez mais próximo e esses dois corações se enchem de alegria, euforia e ansiedade a cada segundo que passa da contagem regressiva! (Misericórdia! Passa logo! hahaha)
             </p>
 
 
