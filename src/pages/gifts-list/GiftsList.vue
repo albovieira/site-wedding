@@ -273,7 +273,7 @@ export default {
   }
 }
 .block {
-  margin-top: 2rem;
+  // margin-top: 2rem;
 }
 .card-img {
   padding: 5rem;

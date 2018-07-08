@@ -64,6 +64,15 @@
                   Yasminne
               </p>
           </b-card>
+          <b-card
+
+                  img-src="/static/imgs/bestmen/valeria.jpeg"
+                  img-alt="Valeria"
+                  img-center>
+              <p class="card-text text-center">
+                  Valeria
+              </p>
+          </b-card>
         </slick>
       </div>
 
@@ -127,6 +136,14 @@
                   img-center>
               <p class="card-text text-center">
                   Daniel
+              </p>
+          </b-card>
+          <b-card
+                  img-src="/static/imgs/bestmen/gary.jpeg"
+                  img-alt="Gary"
+                  img-center>
+              <p class="card-text text-center">
+                  Gary
               </p>
           </b-card>
         </slick>

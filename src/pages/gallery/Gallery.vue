@@ -25,6 +25,9 @@ export default {
 
 <style lang="scss" scoped>
 @import '~assets/scss/index.scss';
+.main-title {
+  margin-bottom: 0rem !important;
+}
 .container-gallery {
   // box-shadow: 1px 0px 8px #ccc;
   // padding: 2rem;
@@ -33,10 +36,15 @@ export default {
   text-align: center;
 
   img {
-    margin: 0 2rem 0 0;
     padding: 2px;
     width: 20rem;
     height: 20rem;
+    margin: 1.5rem;
+    border: #54505469 solid 3px;
+    @include media-breakpoint-down(md) {
+      margin: 0rem;
+      margin-top: 1rem;
+    }
   }
 }
 </style>
