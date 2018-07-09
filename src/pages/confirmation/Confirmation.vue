@@ -123,7 +123,7 @@
           <b-row>
             <b-col cols="12">
               <h4>Desmarcar presença</h4>
-              <p>Olá <strong>{{this.guest.name}}</strong>, após confirmar a desmarcação , alteum texto aqui...</p>
+              <p>Olá <strong>{{this.guest.name}}</strong>, tem certeza que deseja confirmar a desmarcação? </p>
                <b-form-input v-model="email"
                   type="text"
                   placeholder="Email"></b-form-input>
