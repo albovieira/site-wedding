@@ -122,19 +122,18 @@ export default {
     timer() {
       const eventTime = moment('2018-09-07 16:30');
       const currentTime = moment();
-      const diffDays = eventTime.diff(currentTime, 'days');
+      // const diffDays = eventTime.diff(currentTime, 'days');
       const diffTime = eventTime.diff(currentTime, 'milliseconds');
 
       // const diffTime = eventTime - currentTime;
       let duration = moment.duration(diffTime, 'milliseconds');
-      console.log(duration);
       const interval = 1000;
 
       const self = this;
       setInterval(() => {
         duration = moment.duration(duration - interval, 'milliseconds');
         self.countdown = {
-          days: `${diffDays}`,
+          days: `${Math.floor(duration.asDays())}`,
           hours:
             duration.hours() < 10 ? `0${duration.hours()}` : duration.hours(),
           minutes:
