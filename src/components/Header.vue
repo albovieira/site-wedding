@@ -13,7 +13,7 @@
         <div class="banner">
            <img src="/static/imgs/banner/banner_1.jpeg" />
         </div>
-<!--          <div class="banner">
+          <div class="banner">
            <img src="/static/imgs/banner/banner_2.jpeg" />
         </div>
         <div class="banner">
@@ -34,7 +34,7 @@
         <div class="banner">
           <img src="/static/imgs/banner/banner_8.jpeg" />
         </div>
- -->    </slick>
+    </slick>
      <div class="container-countdown">
        <div class="countdown pd-right">
           <strong>{{countdown.days}}</strong> <br>
