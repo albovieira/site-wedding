@@ -2,7 +2,6 @@ import axios from 'axios';
 import config from '@/config/settings';
 import { buildQuery } from './util';
 
-console.log(config.uber);
 async function getUberEstimation(start, end) {
   const query = buildQuery({
     start_latitude: start.lat,

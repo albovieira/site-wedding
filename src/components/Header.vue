@@ -9,46 +9,32 @@
         </template>
       </b-jumbotron>
 
-    <b-carousel id="carousel1"
-                style="text-shadow: 1px 1px 2px #333;z-index:-1"
-
-                background="#ababab"
-                :interval="6000">
-
-      <b-carousel-slide img-src="/static/imgs/banner/banner_1.jpeg">
-      </b-carousel-slide>
-
-      <b-carousel-slide img-src="/static/imgs/banner/banner_2.jpeg">
-      </b-carousel-slide>
-
-       <b-carousel-slide img-src="/static/imgs/banner/banner_3.jpeg">
-      </b-carousel-slide>
-      <b-carousel-slide img-src="/static/imgs/banner/banner_4.jpeg">
-      </b-carousel-slide>
-
-
-      <b-carousel-slide img-src="/static/imgs/banner/banner_5.jpeg">
-      </b-carousel-slide>
-
-      <b-carousel-slide img-src="/static/imgs/banner/banner_6.jpeg">
-      </b-carousel-slide>
-
-      <b-carousel-slide img-src="/static/imgs/banner/banner_7.jpeg">
-      </b-carousel-slide>
-
-      <b-carousel-slide img-src="/static/imgs/banner/banner_8.jpeg">
-      </b-carousel-slide>
-
-
-    </b-carousel>
-      <!-- <b-jumbotron class="cursiveFont bg text-center" header="Camila & Albo">
-        <template slot="lead">
-          <div>
-            <icon name="heart"></icon>
-          </div>
-          <strong >07.Setembro.2018</strong>
-        </template>
-      </b-jumbotron> -->
+      <slick style="text-shadow: 1px 1px 2px #333;z-index:-1;width:100%" ref="slick" :options="slickOptions">
+        <div class="banner">
+           <img src="/static/imgs/banner/banner_1.jpeg" />
+        </div>
+         <div class="banner">
+           <img src="/static/imgs/banner/banner_2.jpeg" />
+        </div>
+        <div class="banner">
+          <img src="/static/imgs/banner/banner_3.jpeg" />
+        </div>
+        <div class="banner">
+          <img src="/static/imgs/banner/banner_4.jpeg" />
+        </div>
+        <div class="banner">
+          <img src="/static/imgs/banner/banner_5.jpeg" />
+        </div>
+        <div class="banner">
+          <img src="/static/imgs/banner/banner_6.jpeg" />
+        </div>
+        <div class="banner">
+          <img src="/static/imgs/banner/banner_7.jpeg" />
+        </div>
+        <div class="banner">
+          <img src="/static/imgs/banner/banner_8.jpeg" />
+        </div>
+    </slick>
      <div class="container-countdown">
        <div class="countdown pd-right">
           <strong>{{countdown.days}}</strong> <br>
@@ -75,18 +61,7 @@
         </div>
      </div>
 
-<!--     <b-nav class="nav-menu"  center>
-      <b-nav-item active-class="active" to="/inicio">Nossa Historia</b-nav-item>
-      <b-nav-item active-class="active"  to="/mural">Mural de Mensagens</b-nav-item>
-      <b-nav-item active-class="active" to="/padrinhos">Padrinhos</b-nav-item>
-      <b-nav-item active-class="active" to="/lista-de-presentes">Lista de Presentes</b-nav-item>
-      <b-nav-item active-class="active" to="/confirmar-presenca">Confirme sua presença</b-nav-item>
-      <b-nav-item active-class="active" to="/fotos">Fotos</b-nav-item>
-      <b-nav-item active-class="active" to="/como-chegar">Como chegar?</b-nav-item>
-    </b-nav>
- -->
     <b-navbar class="nav-menu" toggleable="md">
-
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav>
@@ -106,13 +81,29 @@
 
 <script>
 import moment from 'moment';
+import Slick from 'vue-slick';
 
 export default {
   name: 'Header',
+  components: {
+    Slick
+  },
   data() {
     return {
       countdown: {},
-      slide: null
+      slide: null,
+      slickOptions: {
+        autoplay: true,
+        dots: false,
+        arrows: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: false,
+        cssEase: 'linear',
+        fade: true,
+        centerMode: true
+      }
     };
   },
   created() {
@@ -151,8 +142,22 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scope  d>
 @import '~assets/scss/index.scss';
+
+.slick-slide {
+  margin: 0 auto;
+}
+.banner {
+  margin: 0 auto;
+  @include media-breakpoint-down(xs) {
+    img {
+      width: 110%;
+      margin: 0 auto;
+      height: 22rem;
+    }
+  }
+}
 
 .jumbotron {
   padding-top: 1rem;
@@ -201,6 +206,7 @@ export default {
   @include media-breakpoint-down(xs) {
     margin-top: 0;
     padding: 0.5rem 1rem;
+    margin-top: -4rem;
   }
 }
 
