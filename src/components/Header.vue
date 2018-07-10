@@ -13,7 +13,7 @@
         <div class="banner">
            <img src="/static/imgs/banner/banner_1.jpeg" />
         </div>
-         <div class="banner">
+<!--          <div class="banner">
            <img src="/static/imgs/banner/banner_2.jpeg" />
         </div>
         <div class="banner">
@@ -34,7 +34,7 @@
         <div class="banner">
           <img src="/static/imgs/banner/banner_8.jpeg" />
         </div>
-    </slick>
+ -->    </slick>
      <div class="container-countdown">
        <div class="countdown pd-right">
           <strong>{{countdown.days}}</strong> <br>
@@ -150,12 +150,15 @@ export default {
 }
 .banner {
   margin: 0 auto;
+  width: 100%;
   @include media-breakpoint-down(xs) {
     img {
       width: 110%;
-      margin: 0 auto;
       height: 22rem;
     }
+  }
+  @media (min-width: 1300px) and (max-width: 1400px) {
+    height: 40rem;
   }
 }
 
@@ -207,6 +210,9 @@ export default {
     margin-top: 0;
     padding: 0.5rem 1rem;
     margin-top: -4rem;
+  }
+  @media (min-width: 1300px) and (max-width: 1400px) {
+    margin-top: -13.2rem;
   }
 }
 
