@@ -48,7 +48,7 @@
 
       <b-row style="margin-top:6%" v-if="wishesList.length > 0">
         <b-col cols="12">
-          <h4><icon scale="2" name="headphones" /> As músicas mais pedidas:</h4>
+          <h4 style="display:flex"><icon scale="2" name="headphones" /> <span style="justify-content: center;align-self: center;padding-left: 0.5rem;">As músicas mais pedidas:</span></h4>
         </b-col>
         <b-col>
           <b-list-group>
@@ -286,10 +286,11 @@ export default {
   }
 }
 .guest-name {
-  padding: 0.1rem 1rem 0;
+  padding: 0.4rem 1rem 0;
   font-size: 1rem;
   @include media-breakpoint-down(md) {
     font-size: 0.8rem;
+    padding: 0rem 1rem 0;
   }
 }
 .post2 {

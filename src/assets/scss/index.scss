@@ -189,7 +189,7 @@ button {
 .modal {
   .btn {
     @include media-breakpoint-down(xs) {
-      font-size: 0.8rem !important;
+      font-size: 0.7rem !important;
     }
   }
 }
