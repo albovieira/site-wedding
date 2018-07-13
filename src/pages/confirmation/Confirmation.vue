@@ -19,7 +19,7 @@
             <b-card class="post-it post-it-second"  title="Confirmar sua presença é bem simples basta seguir o<br> passo a passo:">
               <p class="card-text">
                 <ul class="list-steps">
-                    <li>Busque seu nome com sobrenome no campo: "Buscar nome". <b>(ex: Camila Elias)</b>.</li>
+                    <li>Busque seu nome com sobrenome (sem acentuação)  no campo : "Buscar nome". <b>(ex: Camila Elias)</b>.</li>
                     <li>Abrirá uma caixa de mensagem onde você deverá marcar o campo com seu nome, que ficará verde.</li>
                     <li>
                       Logo em seguida, coloque seu email que voce sempre acesse. <br><b>(ex: camilaelas@gmail.com)</b>.

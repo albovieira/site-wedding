@@ -17,9 +17,9 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
-    "connect-history-api-fallback": "^1.5.0",
     "bootstrap": "4.0.0-beta.2",
     "bootstrap-vue": "^1.4.0",
+    "connect-history-api-fallback": "^1.5.0",
     "express": "^4.16.2",
     "lodash": "^4.17.4",
     "mkdirp": "^0.5.1",
@@ -36,6 +36,7 @@
     "vue-clipboard2": "^0.0.8",
     "vue-infinite-scroll": "^2.0.2",
     "vue-loading-overlay": "^2.0.4",
+    "vue-read-more": "^1.1.1",
     "vue-router": "^2.7.0",
     "vue-silentbox": "^0.1.1",
     "vue-simple-spinner": "^1.2.8",

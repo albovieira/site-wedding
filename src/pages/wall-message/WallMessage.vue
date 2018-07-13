@@ -15,7 +15,7 @@
             <b-row class="text-center">
               <b-col class="line" md="4" sm="12" v-for="(m, key)  in messages" :key="m._id">
                  <b-card v-bind:class="{ 'post-it-three ': key % 2 !== 0,'post-it-two': key % 2 === 0 }" class="post-it " text-variant="white">
-                    <p>{{m.message}}</p>
+                    <read-more class="text" more-str="Ver mais" :text="m.message" link="#" less-str="Ver menos" :max-chars="50"></read-more>
                     <small>{{m.author}}</small>
                 </b-card>
               </b-col>
@@ -123,13 +123,18 @@ export default {
     margin-top: 4rem;
     p,
     small {
-      font-family: 'Indie Flower', cursive;
+      font-family: 'Indie Flower', cursive !important;
     }
+  }
+
+  .text {
+    font-family: 'Indie Flower', cursive !important;
+    color: #000;
   }
 }
 
 .post-it {
-  height: 12rem;
+  height: auto;
 
   border: 0;
   box-shadow: 2px 4px 14px #868686;

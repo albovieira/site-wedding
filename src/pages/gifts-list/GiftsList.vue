@@ -2,6 +2,14 @@
   <div>
     <b-container class="top">
         <h1 class="main-title">Lista de presentes</h1>
+        <b-card class="post-it">
+            <h4><strong>Observação</strong></h4>
+            <p class="card-text">
+              Endereço para entrega dos produtos comprados no site:<br>
+              <strong>Rua</strong> Mariana 1013 - Bonfim - <strong>CEP</strong> 31210-420 - Belo Horizonte/MG
+            </p>
+        </b-card>
+
         <b-row>
           <b-col class="block" md="4" sm="12">
             <b-card @click="showModal('modalKitchenHelps')"
@@ -283,6 +291,19 @@ export default {
     width: 10rem;
     height: 10rem;
   }
+}
+.post-it {
+  h4 {
+    font-size: 1.2rem !important;
+  }
+  p {
+    font-size: 0.8rem !important;
+  }
+  margin: 2rem 0 2rem 0;
+  height: auto !important;
+  border: 0;
+  box-shadow: 2px 4px 14px #868686;
+  background: pink !important;
 }
 </style>
 
