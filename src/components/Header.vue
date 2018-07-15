@@ -210,6 +210,7 @@ export default {
     margin-top: 0;
     padding: 0.5rem 1rem;
     margin-top: -4rem;
+    background: #ffdbee;
   }
   @media (min-width: 1300px) and (max-width: 1400px) {
     margin-top: -13.2rem;

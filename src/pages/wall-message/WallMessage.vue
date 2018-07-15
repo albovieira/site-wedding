@@ -16,7 +16,7 @@
               <b-col class="line" md="4" sm="12" v-for="(m, key)  in messages" :key="m._id">
                  <b-card v-bind:class="{ 'post-it-three ': key % 2 !== 0,'post-it-two': key % 2 === 0 }" class="post-it " text-variant="white">
                     <read-more class="text" more-str="Ver mais" :text="m.message" link="#" less-str="Ver menos" :max-chars="50"></read-more>
-                    <small>{{m.author}}</small>
+                    <p class="author">{{m.author}}</p>
                 </b-card>
               </b-col>
             </b-row>
@@ -135,9 +135,12 @@ export default {
 
 .post-it {
   height: auto;
-
   border: 0;
   box-shadow: 2px 4px 14px #868686;
+
+  p.author {
+    font-size: 1rem;
+  }
 }
 .post-it-one {
   background: pink !important;
