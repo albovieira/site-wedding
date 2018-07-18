@@ -50,7 +50,8 @@
 <script>
 import Loading from 'vue-loading-overlay';
 import getUberEstimation from '@/services/uber-estimation';
-import { drawRoute } from '@/services/address';
+// import { drawRoute } from '@/services/address';
+import { http } from '@/services/http';
 
 export default {
   name: 'HowToGet',
@@ -106,8 +107,14 @@ export default {
     },
     async getRoute() {
       console.log(this.currentPosition, this.location);
-      const route = await drawRoute(this.currentPosition, this.location);
-      this.path = route;
+      // const route = await drawRoute(this.currentPosition, this.location);
+      const path = (await http.get(
+        `address/get-path?lat=${this.currentPosition.lat}&lng=${
+          this.currentPosition.lng
+        }`
+      )).data;
+      console.log(path);
+      this.path = path;
     }
   }
 };

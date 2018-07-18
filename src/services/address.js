@@ -33,23 +33,25 @@ function decode(t, e) {
       h = 0,
       i = 0,
       a = null,
-      c = Math.pow(10, e || 5);
-    u < t.length;
+      c = Math.pow(10, e || 5); u < t.length;
 
   ) {
     (a = null), (h = 0), (i = 0);
-    do (a = t.charCodeAt(u++) - 63), (i |= (31 & a) << h), (h += 5);
+    do(a = t.charCodeAt(u++) - 63), (i |= (31 & a) << h), (h += 5);
     while (a >= 32);
     (n = 1 & i ? ~(i >> 1) : i >> 1), (h = i = 0);
-    do (a = t.charCodeAt(u++) - 63), (i |= (31 & a) << h), (h += 5);
+    do(a = t.charCodeAt(u++) - 63), (i |= (31 & a) << h), (h += 5);
     while (a >= 32);
     (o = 1 & i ? ~(i >> 1) : i >> 1),
-      (l += n),
-      (r += o),
-      d.push([l / c, r / c]);
+    (l += n),
+    (r += o),
+    d.push([l / c, r / c]);
   }
-  return (d = d.map(function(t) {
-    return { latitude: t[0], longitude: t[1] };
+  return (d = d.map(function (t) {
+    return {
+      latitude: t[0],
+      longitude: t[1]
+    };
   }));
 }
 
@@ -64,6 +66,7 @@ async function drawRoute(origin, destination) {
   }&mode=driving&origin=${origin.lat},${origin.lng}&destination=${
     destination.lat
   },${destination.lng}`;
+
   const mapsApi = axios.create({
     baseURL: url,
     headers: {
@@ -77,4 +80,7 @@ async function drawRoute(origin, destination) {
   return coords;
 }
 
-export { drawRoute, getCoordinatesFromAddress };
+export {
+  drawRoute,
+  getCoordinatesFromAddress
+};
