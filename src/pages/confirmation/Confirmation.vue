@@ -22,7 +22,7 @@
                     <li>Busque seu nome com sobrenome (sem acentuação)  no campo : "Buscar nome". <b>(ex: Camila Elias)</b>.</li>
                     <li>Abrirá uma caixa de mensagem onde você deverá marcar o campo com seu nome, que ficará verde.</li>
                     <li>
-                      Logo em seguida, coloque seu email que voce sempre acesse. <br><b>(ex: camilaelas@gmail.com)</b>.
+                      Logo em seguida, coloque seu email que você sempre acesse. <br><b>(ex: camilaelas@gmail.com)</b>.
                     </li>
                     <li>E ai, é só sugerir uma música que você queira ouvir sendo tocada na festa! <strong>=)</strong></li>
                 </ul>
@@ -199,8 +199,12 @@ export default {
     async submit(evt) {
       try {
         evt.preventDefault();
-        if (!this.confirmed || !this.email) {
-          swal('Preencha seu email', 'Digite seu email', 'error');
+        if (!this.confirmed) {
+          swal('Marque o checkbox', '', 'error');
+          return;
+        }
+        if (!this.email) {
+          swal('Preencha seu email', '', 'error');
           return;
         }
 

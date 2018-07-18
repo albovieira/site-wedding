@@ -75,8 +75,16 @@ export default {
   },
   methods: {
     async getMessages() {
-      const res = await http.get('wall-messages');
-      this.messages = res.data;
+      try {
+        this.isLoading = true;
+        const res = await http.get('wall-messages');
+        this.messages = res.data;
+        this.isLoading = false;
+      } catch (error) {
+        this.isLoading = false;
+
+        console.log(error);
+      }
     },
     async saveMessage() {
       try {
@@ -84,14 +92,18 @@ export default {
           swal('Digite a mensagem e o seu nome', '', 'error');
           return;
         }
+
+        this.isLoading = true;
         await http.post('wall-messages', {
           author: this.author,
           message: this.message
         });
         swal('Obrigado pela sua mensagem!', '', 'success');
         await this.getMessages();
+        this.isLoading = false;
       } catch (error) {
         console.log(error);
+        this.isLoading = false;
       }
     },
     showModal() {
