@@ -210,7 +210,8 @@ export default {
 
         const payload = {
           _id: this.guest._id,
-          confirmed: this.confirmed
+          confirmed: this.confirmed,
+          email: this.email
         };
 
         if (this.artistName && this.artistMusic) {
