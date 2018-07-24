@@ -64,40 +64,49 @@
       <b-modal id="modalConfirmation" cancel-title="Cancelar" @ok="submit" ok-title="Tudo certo, pode confirmar" centered hide-header ref="modalConfirmation" size="lg" >
         <b-container>
           <b-row>
-          <b-col cols="12">
-            <h4>Confirme sua presença</h4>
-          </b-col>
-          <b-col cols="12" style="margin-top:2rem">
-            <b-form-checkbox id="checkbox1"
-              v-model="confirmed"
-              >
-              <p class="guest-name">{{guest.name}}</p>
-            </b-form-checkbox>
-            <b-form-input v-model="email"
-                  type="text"
-                  placeholder="Email"></b-form-input>
-          </b-col>
-        </b-row>
-        <b-row class="block">
-          <b-col cols="12">
-            <h4>Peça sua música</h4>
-          </b-col>
-          <b-col cols="12">
-              <p>Dance ao som  de sua música favorita! Todos os pedidos serão repassados ao DJ</p>
-              <div>
-                <label for="inputFormatter">Nome do Artista</label>
-                  <b-form-input v-model="artistName"
-                    type="text" style="margin-bottom:1rem"
-                    placeholder="Nome do Artista"></b-form-input>
-              </div>
-
-              <div>
-                <label for="inputFormatter">Nome da música</label>
-                  <b-form-input v-model="artistMusic"
-                      type="text" style="margin-bottom:1rem"
-                      placeholder="Nome da Música"></b-form-input>
-              </div>
+            <b-col cols="12">
+              <h4>Confirme sua presença</h4>
             </b-col>
+            <b-col cols="12" style="margin-top:2rem">
+              <b-form-checkbox id="checkbox1" v-model="confirmed">
+                <p class="guest-name">{{guest.name}}</p>
+              </b-form-checkbox>
+            <div>
+              <label for="inputFormatter">Telefone</label>
+              <input  v-mask="'(##)#####-####'" v-model="phone"
+               type="text" placeholder="Telefone" class="form-control" style="margin-bottom: 1rem;">
+            </div>
+
+            <div>
+              <label for="inputFormatter">Email</label>
+                <b-form-input v-model="email"
+                    type="text" style="margin-bottom:1rem"
+                    placeholder="Email"></b-form-input>
+            </div>
+
+            </b-col>
+          </b-row>
+
+          <b-row class="block">
+            <b-col cols="12">
+              <h4>Peça sua música</h4>
+            </b-col>
+            <b-col cols="12">
+                <p>Dance ao som  de sua música favorita! Todos os pedidos serão repassados ao DJ</p>
+                <div>
+                  <label for="inputFormatter">Nome do Artista</label>
+                    <b-form-input v-model="artistName"
+                      type="text" style="margin-bottom:1rem"
+                      placeholder="Nome do Artista"></b-form-input>
+                </div>
+
+                <div>
+                  <label for="inputFormatter">Nome da música</label>
+                    <b-form-input v-model="artistMusic"
+                        type="text" style="margin-bottom:1rem"
+                        placeholder="Nome da Música"></b-form-input>
+                </div>
+              </b-col>
         </b-row>
         <b-row>
            <b-col>
@@ -124,9 +133,12 @@
             <b-col cols="12">
               <h4>Desmarcar presença</h4>
               <p>Olá <strong>{{this.guest.name}}</strong>, tem certeza que deseja confirmar a desmarcação? </p>
-               <b-form-input v-model="email"
+              <b-form-input v-if="guest.phone" v-model="phone"
                   type="text"
-                  placeholder="Email"></b-form-input>
+                  placeholder="Telefone" style="margin-bottom: 1rem;"></b-form-input>
+              <b-form-input v-if="guest.email" v-model="email"
+                  type="text"
+                  placeholder="Email" style="margin-bottom: 1rem;"></b-form-input>
             </b-col>
           </b-row>
         </b-container>
@@ -159,16 +171,24 @@ export default {
         _id: '',
         name: '',
         confirmed: false,
-        email: ''
+        email: '',
+        phone: ''
       },
       name: '',
       email: '',
+      phone: '',
       confirmed: false,
       status: false,
       artistName: '',
       artistMusic: '',
       linkMusic: '',
-      wishesList: []
+      wishesList: [],
+
+      fieldOptions: [
+        { text: 'Email', value: 'email' },
+        { text: 'Telefone', value: 'phone' }
+      ],
+      fieldSelected: ''
     };
   },
   async created() {
@@ -178,40 +198,61 @@ export default {
     async uncheck(evt) {
       try {
         evt.preventDefault();
-        if (!this.email) {
-          swal('Preencha seu email', 'Digite seu email', 'error');
+        console.log(this);
+        if (!this.email && !this.phone) {
+          swal('Preencha o contato que voce cadastrou', '', 'error');
           return;
         }
-
+        this.isLoading = true;
         const payload = {
           _id: this.guest._id,
           confirmed: false
         };
 
+        if (this.email) {
+          if (this.email !== this.guest.email) {
+            swal('Email não bate com o cadastrado', '', 'error');
+            return;
+          }
+          payload.email = this.email;
+        }
+        if (this.phone) {
+          if (this.phone !== this.guest.phone) {
+            swal('Telefone não bate com o cadastrado', '', 'error');
+            return;
+          }
+          payload.phone = this.phone;
+        }
+
         const res = await http.patch('guests', payload);
         swal('Tudo certo!', 'Presença desmarcada, obrigado!', 'success');
         this.$refs.modalUncheck.hide();
         console.log(res);
+        this.isLoading = false;
       } catch (error) {
         console.log(error);
+        swal('Erro ao desmarcar', '', 'error');
+        this.isLoading = false;
       }
     },
     async submit(evt) {
       try {
+        this.isLoading = true;
         evt.preventDefault();
         if (!this.confirmed) {
           swal('Marque o checkbox', '', 'error');
           return;
         }
-        if (!this.email) {
-          swal('Preencha seu email', '', 'error');
+        if (!this.email && !this.phone) {
+          swal('Preencha seu email e/ou telefone', '', 'error');
           return;
         }
 
         const payload = {
           _id: this.guest._id,
           confirmed: this.confirmed,
-          email: this.email
+          email: this.email,
+          phone: this.phone
         };
 
         if (this.artistName && this.artistMusic) {
@@ -224,9 +265,11 @@ export default {
         const res = await http.patch('guests', payload);
         swal('Tudo certo!', 'Presença confirmada, obrigado!', 'success');
         this.$refs.modalConfirmation.hide();
+        this.isLoading = false;
         console.log(res);
       } catch (error) {
         console.log(error);
+        this.isLoading = false;
       }
     },
     async fetchMusics() {
@@ -234,6 +277,7 @@ export default {
     },
     clean() {
       this.email = '';
+      this.phone = '';
       this.artistName = '';
       this.artistMusic = '';
       this.linkMusic = '';
@@ -245,6 +289,16 @@ export default {
         const res = await http.get(
           `${config.weddingAPI.url}guests?name=${this.name}`
         );
+
+        if (res.data.length === 0) {
+          swal(
+            'Não conseguimos te encontrar',
+            'Digite seu nome completo',
+            'error'
+          );
+          this.isLoading = false;
+          return;
+        }
 
         if (res.data.length > 1) {
           swal('Digite seu nome completo', 'warning');

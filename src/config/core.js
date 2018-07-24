@@ -6,6 +6,7 @@ import Vuelidate from 'vuelidate';
 import * as VueGoogleMaps from 'vue2-google-maps';
 import VueSilentbox from 'vue-silentbox';
 import ReadMore from 'vue-read-more';
+import VueMask from 'v-mask';
 
 export default {
   inject: () => {
@@ -24,5 +25,6 @@ export default {
     Vue.component('icon', Icon);
     Vue.config.productionTip = false;
     Vue.use(ReadMore);
+    Vue.use(VueMask);
   }
 };
