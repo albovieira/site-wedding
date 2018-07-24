@@ -6,7 +6,6 @@
 @import '~vue-loading-overlay/dist/vue-loading.min.css';
 @import '~slick-carousel/slick/slick.css';
 @import '~slick-carousel/slick/slick-theme.css';
-
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower|Montserrat|Pacifico');
@@ -50,11 +49,13 @@ h1 {
     font-size: 1.4rem;
   }
 }
+
 h4 {
   @include media-breakpoint-down(md) {
     font-size: 1rem;
   }
 }
+
 p {
   @include media-breakpoint-down(md) {
     font-size: 0.8rem;
@@ -136,7 +137,6 @@ button {
       font-size: 0.8rem;
     }
   }
-
   @media (min-width: 1300px) and (max-width: 1400px) {
     max-width: 1000px;
     .nav-link {
@@ -154,8 +154,7 @@ button {
 }
 
 .slick-slide {
-  margin-right: 1rem !important;
-  // width: 100% !important;
+  margin-right: 1rem !important; // width: 100% !important;
 }
 
 .slick-prev:before,
@@ -163,15 +162,17 @@ button {
   font-size: 30px;
   text-shadow: 1px 1px 10px black;
 }
+
 .slick-prev {
   left: 2px;
   z-index: 1000;
 }
+
 .slick-next {
   right: 14px;
 }
 
-.custom-control-input:checked ~ .custom-control-indicator {
+.custom-control-input:checked~.custom-control-indicator {
   background-color: #6cc16c !important;
 }
 
@@ -220,4 +221,8 @@ select,
 input,
 button {
   border-radius: 0 !important;
+}
+
+.bold {
+  font-weight: bolder !important
 }

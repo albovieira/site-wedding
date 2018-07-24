@@ -19,7 +19,7 @@
             <b-card class="post-it post-it-second"  title="Confirmar sua presença é bem simples basta seguir o<br> passo a passo:">
               <p class="card-text">
                 <ul class="list-steps">
-                    <li>Busque seu nome com sobrenome (sem acentuação)  no campo : "Buscar nome". <b>(ex: Camila Elias)</b>.</li>
+                    <li>Busque seu nome com sobrenome (sem acentuação)  no campo : "Buscar nome".<br> <b>(ex: Camila Elias)</b> ou telefone</li>
                     <li>Abrirá uma caixa de mensagem onde você deverá marcar o campo com seu nome, que ficará verde.</li>
                     <li>
                       Logo em seguida, coloque seu email que você sempre acesse. <br><b>(ex: camilaelas@gmail.com)</b>.
@@ -68,8 +68,8 @@
               <h4>Confirme sua presença</h4>
             </b-col>
             <b-col cols="12" style="margin-top:2rem">
-              <b-form-checkbox id="checkbox1" v-model="confirmed">
-                <p class="guest-name">{{guest.name}}</p>
+              <b-form-checkbox v-bind:class="{'bold text-success': confirmed}" id="checkbox1" v-model="confirmed">
+                <p class="guest-name ">{{guest.name}}</p>
               </b-form-checkbox>
             <div>
               <label for="inputFormatter">Telefone</label>
@@ -198,7 +198,6 @@ export default {
     async uncheck(evt) {
       try {
         evt.preventDefault();
-        console.log(this);
         if (!this.email && !this.phone) {
           swal('Preencha o contato que voce cadastrou', '', 'error');
           return;
