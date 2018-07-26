@@ -106,15 +106,22 @@ export default {
       }
     },
     async getRoute() {
-      console.log(this.currentPosition, this.location);
-      // const route = await drawRoute(this.currentPosition, this.location);
-      const path = (await http.get(
-        `address/get-path?lat=${this.currentPosition.lat}&lng=${
-          this.currentPosition.lng
-        }`
-      )).data;
-      console.log(path);
-      this.path = path;
+      try {
+        console.log(this.currentPosition, this.location);
+        // const route = await drawRoute(this.currentPosition, this.location);
+        this.isLoading = true;
+        const path = (await http.get(
+          `address/get-path?lat=${this.currentPosition.lat}&lng=${
+            this.currentPosition.lng
+          }`
+        )).data;
+        console.log(path);
+        this.path = path;
+        this.isLoading = false;
+      } catch (error) {
+        console.log(error);
+        this.isLoading = false;
+      }
     }
   }
 };
