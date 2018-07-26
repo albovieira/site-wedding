@@ -40,7 +40,10 @@ module.exports = {
     ],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-    'import/no-unresolved': [0, { commonjs: true, amd: true }],
+    'import/no-unresolved': [0, {
+      commonjs: true,
+      amd: true
+    }],
     'comma-dangle': ['error', 'never'],
     'no-console': 0,
     'arrow-parens': 0,
@@ -49,6 +52,7 @@ module.exports = {
     'import/prefer-default-export': 0,
     'no-underscore-dangle': 0,
     'new-cap': 0,
-    'linebreak-style': 0
+    'linebreak-style': 0,
+    'indent': 0
   }
 };
