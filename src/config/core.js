@@ -3,10 +3,10 @@ import BootstrapVue from 'bootstrap-vue';
 import 'vue-awesome/icons';
 import Icon from 'vue-awesome/components/Icon';
 import Vuelidate from 'vuelidate';
-import * as VueGoogleMaps from 'vue2-google-maps';
 import VueSilentbox from 'vue-silentbox';
 import ReadMore from 'vue-read-more';
 import VueMask from 'v-mask';
+import * as VueGoogleMaps from 'vue2-google-maps';
 
 export default {
   inject: () => {

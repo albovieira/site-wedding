@@ -152,7 +152,6 @@
 import Autocomplete from 'vuejs-auto-complete';
 import Loading from 'vue-loading-overlay';
 
-// import * as SpotifyWebApi from 'spotify-web-api-js';
 import config from '@/config/settings';
 import swal from 'sweetalert';
 import { http } from '@/services/http';
