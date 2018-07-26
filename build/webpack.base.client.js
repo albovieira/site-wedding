@@ -41,6 +41,12 @@ module.exports = {
         ],
       },
       {
+        test: /\.(js|vue)$/,
+        loader: 'eslint-loader',
+        enforce: 'pre',
+        include: [resolve('src'), resolve('test')]
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
@@ -64,17 +70,8 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['es2015']
-          }
-        },
-        include: [
-          resolve('src'),
-          resolve('node_modules/vue-silentbox')
-        ]
+        loader: 'babel-loader',
+        exclude: /node_modules/
       },
       {
         test: /\.(png|jpg|gif|svg)$/,

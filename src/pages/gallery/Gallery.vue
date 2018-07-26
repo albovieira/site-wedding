@@ -3,11 +3,11 @@
     <b-container class="top">
       <h1 class="main-title">Fotos</h1>
       <div class="container-gallery">
-          <silentbox-group>
+          <!-- <silentbox-group>
             <silentbox-item v-for="n in 36" :key="n"  :src="`/static/imgs/gallery/${n}.jpeg`">
                 <img :src="`/static/imgs/gallery/${n}.jpeg`">
             </silentbox-item>
-          </silentbox-group>
+          </silentbox-group> -->
       </div>
     </b-container>
   </div>

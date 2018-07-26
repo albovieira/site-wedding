@@ -15,8 +15,8 @@
     "heroku-prebuild": "npm install --only=dev",
     "ssr-start": "npm run ssr-build && npm run ssr-start-server",
     "ssr-build": "npm run ssr-build-client && npm run ssr-build-server",
-    "ssr-build-client": "cross-env NODE_ENV=production webpack --config ./build/webpack.base.client.js --progress --hide-modules",
-    "ssr-build-server": "cross-env NODE_ENV=production webpack --config ./build/webpack.base.server.js --progress --hide-modules",
+    "ssr-build-client": "cross-env NODE_ENV=production webpack --config ./build/webpack.base.client.js --progress --hide-modules -p",
+    "ssr-build-server": "cross-env NODE_ENV=production webpack --config ./build/webpack.base.server.js --progress --hide-modules -p",
     "ssr-start-server": "node dist/server.bundle.js"
   },
   "dependencies": {
@@ -55,6 +55,8 @@
     "babel-eslint": "^7.1.1",
     "babel-loader": "^7.1.1",
     "babel-plugin-istanbul": "^4.1.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "babel-plugin-transform-es2015-template-literals": "^6.22.0",
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-preset-env": "^1.3.2",
     "babel-preset-es2015": "^6.24.1",
