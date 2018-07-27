@@ -46,7 +46,7 @@
         <b-modal id="modalKitchenHelps" @hidden="onHidden" title="Ajudinha na Cozinha" cancel-title="Fechar"  centered  ref="modalKitchenHelps" size="lg" >
           <b-container>
             <b-row >
-              <b-col class="d-flex">
+              <b-col sm="12" class="d-flex">
                 <b-input-group>
                   <b-form-input v-model="filter.kitchen.productName" placeholder="Buscar..."></b-form-input>
                   <b-input-group-append class="center-d">
@@ -56,7 +56,7 @@
                   </b-input-group-append>
                 </b-input-group>
               </b-col>
-              <b-col class="d-flex">
+              <b-col sm="12" class="d-flex d-bottom">
                 <b-button-group>
                   <b-button variant="outline-success" :pressed="filter.kitchen.low" @click="setFilter('low','kitchen')">Menor Valor</b-button>
                   <b-button variant="outline-success" :pressed="filter.kitchen.high" @click="setFilter('high','kitchen')">Maior Valor</b-button>
@@ -75,7 +75,7 @@
         <b-modal id="modalHomeHelps" @hidden="onHidden" title="Ajudinha na Casa" cancel-title="Fechar"  centered  ref="modalHomeHelps" size="lg" >
           <b-container>
             <b-row>
-              <b-col class="d-flex">
+              <b-col sm="12" class="d-flex">
                 <b-input-group>
                   <b-form-input v-model="filter.home.productName" placeholder="Buscar..."></b-form-input>
                   <b-input-group-append class="center-d">
@@ -85,7 +85,7 @@
                   </b-input-group-append>
                 </b-input-group>
               </b-col>
-              <b-col class="d-flex">
+              <b-col sm="12" class="d-flex d-bottom">
                 <b-button-group>
                   <b-button variant="outline-success" :pressed="filter.home.low" @click="setFilter('low','home')">Menor Valor</b-button>
                   <b-button variant="outline-success" :pressed="filter.home.high" @click="setFilter('high','home')">Maior Valor</b-button>
@@ -103,25 +103,8 @@
 
         <b-modal id="modalHoneymoon" @hidden="onHidden" title="Ajudinha na Lua de Mel" cancel-title="Fechar"  centered  ref="modalHoneymoon" size="lg" >
           <b-container>
+
             <b-row >
-              <b-col class="d-flex">
-                <b-input-group>
-                  <b-form-input v-model="filter.honeymoon.productName" placeholder="Buscar..."></b-form-input>
-                  <b-input-group-append class="center-d">
-                    <b-btn @click="setFilter('productName','honeymoon')" variant="outline-success">
-                      <icon name="search" scale="2" ></icon>
-                    </b-btn>
-                  </b-input-group-append>
-                </b-input-group>
-              </b-col>
-              <b-col class="d-flex">
-                <b-button-group>
-                  <b-button variant="outline-success" :pressed="filter.honeymoon.low" @click="setFilter('low','honeymoon')">Menor Valor</b-button>
-                  <b-button variant="outline-success" :pressed="filter.honeymoon.high" @click="setFilter('high','honeymoon')">Maior Valor</b-button>
-                </b-button-group>
-              </b-col>
-            </b-row>
-            <b-row class="top">
               <b-col class="container-product" md="4" sm="12" v-for="(item, key) in honeymoonItems" :key="key">
                  <pay-pal-button :certificate="item.certificate" :price="`R$ ${item.price}`" :name="item.name" :img="item.img" />
               </b-col>
@@ -249,6 +232,9 @@ export default {
 @import '~assets/scss/index.scss';
 .top {
   margin-top: 2rem;
+}
+.d-bottom {
+  margin-top: 1rem;
 }
 .d-flex {
   display: flex;
