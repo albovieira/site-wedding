@@ -7,7 +7,7 @@
         <b-col md="4" sm="12">
             <b-card class="post-it post-it-tip" text-variant="white" title="Traje - Social">
               <p class="card-text">
-                Conferir <a href="https://br.pinterest.com/mimicaelias/casamento-no-campo/"><strong>DICAS</strong></a>
+                Conferir <a href="https://br.pinterest.com/mimicaelias/casamento-no-campo/" target="_blank"><strong>DICAS</strong></a>
               </p>
 
               <div class="container-img">
