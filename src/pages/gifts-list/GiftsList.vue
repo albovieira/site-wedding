@@ -46,7 +46,7 @@
         <b-modal id="modalKitchenHelps" @hidden="onHidden" title="Ajudinha na Cozinha" cancel-title="Fechar"  centered  ref="modalKitchenHelps" size="lg" >
           <b-container>
             <b-row >
-              <b-col sm="12" class="d-flex">
+              <b-col sm="12" md="6" class="d-flex">
                 <b-input-group>
                   <b-form-input v-model="filter.kitchen.productName" placeholder="Buscar..."></b-form-input>
                   <b-input-group-append class="center-d">
@@ -56,7 +56,7 @@
                   </b-input-group-append>
                 </b-input-group>
               </b-col>
-              <b-col sm="12" class="d-flex d-bottom">
+              <b-col sm="12" md="6" class="d-flex d-bottom">
                 <b-button-group>
                   <b-button variant="outline-success" :pressed="filter.kitchen.low" @click="setFilter('low','kitchen')">Menor Valor</b-button>
                   <b-button variant="outline-success" :pressed="filter.kitchen.high" @click="setFilter('high','kitchen')">Maior Valor</b-button>
@@ -75,7 +75,7 @@
         <b-modal id="modalHomeHelps" @hidden="onHidden" title="Ajudinha na Casa" cancel-title="Fechar"  centered  ref="modalHomeHelps" size="lg" >
           <b-container>
             <b-row>
-              <b-col sm="12" class="d-flex">
+              <b-col md="6" sm="12" class="d-flex">
                 <b-input-group>
                   <b-form-input v-model="filter.home.productName" placeholder="Buscar..."></b-form-input>
                   <b-input-group-append class="center-d">
@@ -85,7 +85,7 @@
                   </b-input-group-append>
                 </b-input-group>
               </b-col>
-              <b-col sm="12" class="d-flex d-bottom">
+              <b-col sm="12" md="6" class="d-flex d-bottom">
                 <b-button-group>
                   <b-button variant="outline-success" :pressed="filter.home.low" @click="setFilter('low','home')">Menor Valor</b-button>
                   <b-button variant="outline-success" :pressed="filter.home.high" @click="setFilter('high','home')">Maior Valor</b-button>
