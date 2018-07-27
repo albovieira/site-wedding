@@ -3,9 +3,21 @@
     <loading :active.sync="isLoading"></loading>
     <b-container class="top">
       <h1 class="main-title">Confirmar presença</h1>
-      <b-row>
+       <b-row>
         <b-col md="4" sm="12">
-            <b-card class="post-it post-it-presence" text-variant="white" title="Não se esqueça,">
+            <b-card class="post-it post-it-tip" text-variant="white" title="Traje - Social">
+              <p class="card-text">
+                Conferir <a href="https://br.pinterest.com/mimicaelias/casamento-no-campo/"><strong>DICAS</strong></a>
+              </p>
+
+              <div class="container-img">
+                <img class="img-clothes" src="/static/imgs/dress.svg" />
+                <img class="img-clothes" src="/static/imgs/terno.svg" />
+              </div>
+
+
+            </b-card>
+            <b-card style="margin-top:2rem" class="post-it post-it-presence" text-variant="white" title="Não se esqueça,">
               <p class="card-text">
                 Você tem até o dia <b>07 de Agosto</b> para confirmar sua presença!
               </p>
@@ -399,6 +411,14 @@ h4 {
 }
 .list-steps {
   padding: 1rem;
+}
+
+.container-img {
+  float: right;
+  margin-top: -4rem;
+}
+.img-clothes {
+  width: 50px;
 }
 </style>
 
