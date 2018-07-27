@@ -215,6 +215,12 @@ export default {
   @media (min-width: 1300px) and (max-width: 1400px) {
     margin-top: -13.2rem;
   }
+
+  .time-description {
+    @include media-breakpoint-down(xs) {
+      text-shadow: 0.5px 0.5px 0.8px black;
+    }
+  }
 }
 
 .pd-right {
