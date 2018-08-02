@@ -240,6 +240,8 @@ export default {
         this.$refs.modalUncheck.hide();
         console.log(res);
         this.isLoading = false;
+        this.clean();
+        this.name = '';
       } catch (error) {
         console.log(error);
         swal('Erro ao desmarcar', '', 'error');
@@ -273,11 +275,12 @@ export default {
           payload.music.link = this.linkMusic;
         }
 
-        const res = await http.patch('guests', payload);
+        await http.patch('guests', payload);
         swal('Tudo certo!', 'Presença confirmada, obrigado!', 'success');
         this.$refs.modalConfirmation.hide();
         this.isLoading = false;
-        console.log(res);
+        this.clean();
+        this.name = '';
       } catch (error) {
         console.log(error);
         this.isLoading = false;
@@ -288,10 +291,12 @@ export default {
     },
     clean() {
       this.email = '';
+      this.email = '';
       this.phone = '';
       this.artistName = '';
       this.artistMusic = '';
       this.linkMusic = '';
+      this.confirmed = false;
     },
     async searchUser() {
       try {
