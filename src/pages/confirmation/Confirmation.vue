@@ -62,12 +62,12 @@
         <b-col cols="12">
           <h4 style="display:flex"><icon scale="2" name="headphones" /> <span style="justify-content: center;align-self: center;padding-left: 0.5rem;">As músicas mais pedidas:</span></h4>
         </b-col>
-        <b-col>
+        <b-col sm="12" md="6" >
           <b-list-group>
             <b-list-group-item v-for="(music, index) in wishesList" :key="index">{{music.music}} - {{music.name}} <!-- <icon name="play" color="#000"></icon> --></b-list-group-item>
           </b-list-group>
         </b-col>
-        <b-col class="warning">
+        <b-col sm="12" md="6" class="warning">
           <iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=playlist&id=4421478286&app_id=1" width="700" height="350"></iframe>
         </b-col>
       </b-row>
@@ -239,8 +239,8 @@ export default {
         swal('Tudo certo!', 'Presença desmarcada, obrigado!', 'success');
         this.$refs.modalUncheck.hide();
         console.log(res);
-        this.isLoading = false;
         this.clean();
+        this.isLoading = false;
         this.name = '';
       } catch (error) {
         console.log(error);

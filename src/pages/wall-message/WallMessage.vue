@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="top">
       <loading :active.sync="isLoading"></loading>
       <div class="container">
           <h1 class="main-title">Mural de Mensagens</h1>
@@ -117,8 +117,6 @@ export default {
 @import '~assets/scss/index.scss';
 
 .container {
-  min-height: 10rem;
-  padding: 3rem;
   h2,
   p,
   small {
