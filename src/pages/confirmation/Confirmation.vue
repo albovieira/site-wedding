@@ -252,6 +252,7 @@ export default {
       try {
         this.isLoading = true;
         evt.preventDefault();
+
         if (!this.confirmed) {
           swal('Marque o checkbox', '', 'error');
           return;
@@ -301,6 +302,13 @@ export default {
     async searchUser() {
       try {
         this.clean();
+        const block = true;
+
+        if (block) {
+          swal('Confirmação indisponivel', '', 'warning');
+          return;
+        }
+
         this.isLoading = true;
         const res = await http.get(
           `${config.weddingAPI.url}guests?name=${this.name}`
