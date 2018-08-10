@@ -302,12 +302,6 @@ export default {
     async searchUser() {
       try {
         this.clean();
-        const block = true;
-
-        if (block) {
-          swal('Confirmação indisponivel', '', 'warning');
-          return;
-        }
 
         this.isLoading = true;
         const res = await http.get(
